@@ -1,0 +1,40 @@
+{
+	"schemaVersion": 1,
+	"id": "epicmod",
+	"version": "${version}",
+	"name": "Ezkidtrix Mod",
+	"description": "Ezkidtrix's Mod :)",
+	"authors": [
+		"Ezkidtrix"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/epicmod/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"net.ezkidtrix.epicmcmod.EpicMCMod"
+		],
+		"client": [
+			"net.ezkidtrix.epicmcmod.EpicMCModClient"
+		],
+		"fabric-datagen": [
+			"net.ezkidtrix.epicmcmod.EpicMCModDataGenerator"
+		]
+	},
+	"mixins": [
+		"epicmod.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.15.11",
+		"minecraft": "~1.20.4",
+		"java": ">=17",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
