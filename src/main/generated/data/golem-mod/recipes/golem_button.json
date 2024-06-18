@@ -1,17 +1,20 @@
 {
   "type": "minecraft:crafting_shaped",
-  "category": "redstone",
+  "category": "building",
   "key": {
     "#": {
       "item": "golem-mod:golem_block"
+    },
+    "S": {
+      "item": "minecraft:stick"
     }
   },
   "pattern": [
-    "   ",
-    " # ",
+    "#S#",
+    "#S#",
     "   "
   ],
   "result": {
-    "item": "golem-mod:golem_button"
+    "item": "golem-mod:golem_fence"
   }
 }

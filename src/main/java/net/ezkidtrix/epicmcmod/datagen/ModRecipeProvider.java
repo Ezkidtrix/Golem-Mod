@@ -102,16 +102,65 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .criterion(hasItem(ModItems.GOLEM_INGOT), conditionsFromItem(ModItems.GOLEM_INGOT))
                 .offerTo(exporter, new Identifier(getRecipeName(ModItems.GOLEM_BOOTS)));
 
-        createStairsRecipe(ModBlocks.GOLEM_STAIRS, Ingredient.ofItems(ModBlocks.GOLEM_BLOCK));
-        createSlabRecipe(RecipeCategory.BUILDING_BLOCKS, ModBlocks.GOLEM_SLAB, Ingredient.ofItems(ModBlocks.GOLEM_BLOCK));
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, ModBlocks.GOLEM_STAIRS, 1)
+                .pattern("#  ")
+                .pattern("## ")
+                .pattern("###")
+                .input('#', ModBlocks.GOLEM_BLOCK)
+                .criterion(hasItem(ModBlocks.GOLEM_BLOCK), conditionsFromItem(ModBlocks.GOLEM_BLOCK))
+                .offerTo(exporter, new Identifier(getRecipeName(ModBlocks.GOLEM_STAIRS)));
 
-        createPressurePlateRecipe(RecipeCategory.REDSTONE, ModBlocks.GOLEM_PRESSURE_PLATE, Ingredient.ofItems(ModBlocks.GOLEM_BLOCK));
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, ModBlocks.GOLEM_SLAB, 1)
+                .pattern("   ")
+                .pattern("###")
+                .pattern("   ")
+                .input('#', ModBlocks.GOLEM_BLOCK)
+                .criterion(hasItem(ModBlocks.GOLEM_BLOCK), conditionsFromItem(ModBlocks.GOLEM_BLOCK))
+                .offerTo(exporter, new Identifier(getRecipeName(ModBlocks.GOLEM_SLAB)));
 
-        createFenceRecipe(ModBlocks.GOLEM_FENCE, Ingredient.ofItems(ModBlocks.GOLEM_BLOCK));
-        createFenceGateRecipe(ModBlocks.GOLEM_FENCE_GATE, Ingredient.ofItems(ModBlocks.GOLEM_BLOCK));
+        ShapedRecipeJsonBuilder.create(RecipeCategory.REDSTONE, ModBlocks.GOLEM_PRESSURE_PLATE, 1)
+                .pattern("   ")
+                .pattern("## ")
+                .pattern("   ")
+                .input('#', ModBlocks.GOLEM_BLOCK)
+                .criterion(hasItem(ModBlocks.GOLEM_BLOCK), conditionsFromItem(ModBlocks.GOLEM_BLOCK))
+                .offerTo(exporter, new Identifier(getRecipeName(ModBlocks.GOLEM_PRESSURE_PLATE)));
 
-        createDoorRecipe(ModBlocks.GOLEM_DOOR, Ingredient.ofItems(ModBlocks.GOLEM_BLOCK));
-        createTrapdoorRecipe(ModBlocks.GOLEM_TRAPDOOR, Ingredient.ofItems(ModBlocks.GOLEM_BLOCK));
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, ModBlocks.GOLEM_FENCE, 1)
+                .pattern("#S#")
+                .pattern("#S#")
+                .pattern("   ")
+                .input('#', ModBlocks.GOLEM_BLOCK)
+                .input('S', Items.STICK)
+                .criterion(hasItem(ModBlocks.GOLEM_BLOCK), conditionsFromItem(ModBlocks.GOLEM_BLOCK))
+                .criterion(hasItem(Items.STICK), conditionsFromItem(Items.STICK))
+                .offerTo(exporter, new Identifier(getRecipeName(ModBlocks.GOLEM_FENCE)));
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, ModBlocks.GOLEM_FENCE_GATE, 1)
+                .pattern("S#S")
+                .pattern("S#S")
+                .pattern("   ")
+                .input('#', ModBlocks.GOLEM_BLOCK)
+                .input('S', Items.STICK)
+                .criterion(hasItem(ModBlocks.GOLEM_BLOCK), conditionsFromItem(ModBlocks.GOLEM_BLOCK))
+                .criterion(hasItem(Items.STICK), conditionsFromItem(Items.STICK))
+                .offerTo(exporter, new Identifier(getRecipeName(ModBlocks.GOLEM_FENCE_GATE)));
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, ModBlocks.GOLEM_DOOR, 1)
+                .pattern(" ##")
+                .pattern(" ##")
+                .pattern(" ##")
+                .input('#', ModBlocks.GOLEM_BLOCK)
+                .criterion(hasItem(ModBlocks.GOLEM_BLOCK), conditionsFromItem(ModBlocks.GOLEM_BLOCK))
+                .offerTo(exporter, new Identifier(getRecipeName(ModBlocks.GOLEM_DOOR)));
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, ModBlocks.GOLEM_TRAPDOOR, 1)
+                .pattern("###")
+                .pattern("###")
+                .pattern("   ")
+                .input('#', ModBlocks.GOLEM_BLOCK)
+                .criterion(hasItem(ModBlocks.GOLEM_BLOCK), conditionsFromItem(ModBlocks.GOLEM_BLOCK))
+                .offerTo(exporter, new Identifier(getRecipeName(ModBlocks.GOLEM_TRAPDOOR)));
 
         ShapedRecipeJsonBuilder.create(RecipeCategory.REDSTONE, ModBlocks.GOLEM_BUTTON, 1)
                 .pattern("   ")
