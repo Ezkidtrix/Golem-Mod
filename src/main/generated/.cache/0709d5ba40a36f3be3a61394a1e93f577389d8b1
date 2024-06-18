@@ -1,0 +1,27 @@
+// 1.20.4	2024-06-17T21:22:49.5956491	Golem Mod/Recipes
+a49e294b4d48269a56296127a603b7efb4101283 data\golem-mod\advancements\recipes\building_blocks\golem_block.json
+1fd18f362b31bd507dec3f80d03cec5fd11b3378 data\golem-mod\recipes\golem_block.json
+5f00bdd8c449b4571187d7936b6a2739923ac7ad data\golem-mod\recipes\golem_wall.json
+103bba70486aa0a25b48402ceef01d86a60e4678 data\golem-mod\recipes\golem_chestplate.json
+a5fec2798bdb3f71ba3496d4b5c98271e6003c78 data\golem-mod\advancements\recipes\misc\golem_ingot.json
+256b62acc4efac946a7597919d838520a16cc08d data\golem-mod\advancements\recipes\combat\golem_sword.json
+bb6fa579ff3f37724488a62250effb092bcbf121 data\golem-mod\advancements\recipes\combat\golem_leggings.json
+ac2d2e79a3dee24ce748a47c432d13e0233051c1 data\golem-mod\recipes\golem_shovel.json
+2fe88de04012d8ed0f5c87f93cb70f0c040429f7 data\golem-mod\advancements\recipes\combat\golem_helmet.json
+e527b94e31afba9e1713081661a7d316936fe159 data\golem-mod\recipes\golem_pickaxe.json
+2cd807c8e5d7f7dcac85395183df04d7bf9384eb data\golem-mod\advancements\recipes\tools\golem_shovel.json
+3c9ad821859010425a11e9903df5160fb328064c data\golem-mod\advancements\recipes\redstone\golem_button.json
+18a6bed0b66685197358659f1d55d831796c8d43 data\golem-mod\advancements\recipes\tools\golem_hoe.json
+a5192de18cea259c128386518330bf472199e5d8 data\golem-mod\recipes\golem_boots.json
+9ecdb891b636e54d9f6637aeac70a67be859bcc1 data\golem-mod\recipes\golem_hoe.json
+9368f50a4beb1d9a2042e72b99ea846d89eca477 data\golem-mod\recipes\golem_axe.json
+ca1b3d9e1478bccbf3dc532d73fea91276a91ed1 data\golem-mod\recipes\golem_ingot.json
+f90a4ffc20832e920d5cc036f9a8e650956177dc data\golem-mod\recipes\golem_button.json
+bebb56628d6d74d52a90f16b8b5b9573af386c55 data\golem-mod\advancements\recipes\building_blocks\golem_wall.json
+75ffa9ef208ce2913bcde4e79a71d603a4f9f23e data\golem-mod\recipes\golem_leggings.json
+ede6a2c6e98950e18c6503582ae5caf68fa20725 data\golem-mod\recipes\golem_sword.json
+383c9a38e106b5349d23830395e511ceca50d1bd data\golem-mod\advancements\recipes\tools\golem_pickaxe.json
+37b64668f4e2f8c77adeefcdda98ebc973309ce1 data\golem-mod\advancements\recipes\combat\golem_chestplate.json
+cacbb7052a3a106e5c0026a46250e1ae3b0a0ca8 data\golem-mod\recipes\golem_helmet.json
+3d887055c4861977a0d6effd5fd3480a423808b2 data\golem-mod\advancements\recipes\combat\golem_boots.json
+bba7f0f3c83961307db81255000f150f7800f9d2 data\golem-mod\advancements\recipes\tools\golem_axe.json

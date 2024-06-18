@@ -10,7 +10,7 @@ import net.minecraft.sound.SoundEvents;
 import java.util.function.Supplier;
 
 public enum ModArmorMaterials implements ArmorMaterial {
-    ;
+    GOLEM("golem", 10000, new int[] { 3, 8, 6, 3 }, 50, SoundEvents.ITEM_ARMOR_EQUIP_GENERIC, 5f, 0.3f, () -> Ingredient.ofItems(ModItems.GOLEM_INGOT));
 
     private final String name;
     private final int durabilityMultiplier;
@@ -21,7 +21,7 @@ public enum ModArmorMaterials implements ArmorMaterial {
     private final float knockbackResistance;
     private final Supplier<Ingredient> repairIngredient;
 
-    private static final int[] BASE_DURABILITY = { 11, 16, 15, 13 };
+    private static final int[] BASE_DURABILITY = { 21, 25, 22, 20 };
 
     ModArmorMaterials(String name, int durabilityMultiplier, int[] protectionAmounts, int enchantability, SoundEvent equipSound, float toughness, float knockbackResistance, Supplier<Ingredient> repairIngredient) {
         this.name = name;

@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "redstone",
+  "key": {
+    "#": {
+      "item": "golem-mod:golem_block"
+    }
+  },
+  "pattern": [
+    "   ",
+    " # ",
+    "   "
+  ],
+  "result": {
+    "item": "golem-mod:golem_button"
+  }
+}

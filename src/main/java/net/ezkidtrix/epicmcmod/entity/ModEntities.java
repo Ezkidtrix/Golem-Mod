@@ -12,6 +12,6 @@ import net.minecraft.util.Identifier;
 
 public class ModEntities {
     public static final EntityType<MiniGolemEntity> MiniGolem = Registry.register(Registries.ENTITY_TYPE,
-            new Identifier(EpicMCMod.MOD_ID, "small_golem"), FabricEntityTypeBuilder.create(SpawnGroup.CREATURE, MiniGolemEntity::new)
+            new Identifier(EpicMCMod.MOD_ID, "mini_golem"), FabricEntityTypeBuilder.create(SpawnGroup.CREATURE, MiniGolemEntity::new)
                     .dimensions(EntityDimensions.fixed(1f, 1f)).build());
 }

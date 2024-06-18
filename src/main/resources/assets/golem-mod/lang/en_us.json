@@ -1,0 +1,36 @@
+{
+  "itemgroup.golemitems": "Golem Items",
+
+  "item.golem-mod.mini_golem_spawn_egg":  "Mini Golem Spawn Egg",
+  "entity.golem-mod.mini_golem": "Mini Golem",
+
+  "item.golem-mod.golem_ingot": "Golem Ingot",
+
+  "block.golem-mod.golem_block": "Golem Block",
+  "block.golem-mod.golem_ore": "Golem Ore",
+  "block.golem-mod.deepslate_golem_ore": "Deepslate Golem Ore",
+
+  "item.golem-mod.golem_sword": "Golem Sword",
+  "item.golem-mod.golem_pickaxe": "Golem Pickaxe",
+  "item.golem-mod.golem_axe": "Golem Axe",
+  "item.golem-mod.golem_shovel": "Golem Shovel",
+  "item.golem-mod.golem_hoe": "Golem Hoe",
+
+  "item.golem-mod.golem_helmet": "Golem Helmet",
+  "item.golem-mod.golem_chestplate": "Golem Chestplate",
+  "item.golem-mod.golem_leggings": "Golem Leggings",
+  "item.golem-mod.golem_boots": "Golem Boots",
+
+  "block.golem-mod.golem_stairs": "Golem Stairs",
+  "block.golem-mod.golem_slab": "Golem Slab",
+
+  "block.golem-mod.golem_button": "Golem Button",
+  "block.golem-mod.golem_pressure_plate": "Golem Pressure Plate",
+
+  "block.golem-mod.golem_fence": "Golem Fence",
+  "block.golem-mod.golem_fence_gate": "Golem Fence Gate",
+  "block.golem-mod.golem_wall": "Golem Wall",
+
+  "block.golem-mod.golem_door": "Golem Door",
+  "block.golem-mod.golem_trapdoor": "Golem Trapdoor"
+}

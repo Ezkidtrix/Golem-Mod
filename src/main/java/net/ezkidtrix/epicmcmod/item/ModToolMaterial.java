@@ -1,12 +1,13 @@
 package net.ezkidtrix.epicmcmod.item;
 
+import net.fabricmc.yarn.constants.MiningLevels;
 import net.minecraft.item.ToolMaterial;
 import net.minecraft.recipe.Ingredient;
 
 import java.util.function.Supplier;
 
 public enum ModToolMaterial implements ToolMaterial {
-    ;
+    GOLEM(3, 10000, 100f, 3f, 50, () -> Ingredient.ofItems(ModItems.GOLEM_INGOT));
 
     private final int miningLevel;
     private final int itemDurability;

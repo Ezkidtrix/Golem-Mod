@@ -60,10 +60,7 @@ public class MiniGolemEntity extends IronGolemEntity implements Angerable  {
     }
 
     public static DefaultAttributeContainer.Builder createMiniGolemAttributes() {
-        return IronGolemEntity.createMobAttributes()
-                .add(EntityAttributes.GENERIC_MAX_HEALTH, 1000000.0)
-                .add(EntityAttributes.GENERIC_ATTACK_DAMAGE, 10000.0)
-                .add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 10.0);
+        return MobEntity.createMobAttributes().add(EntityAttributes.GENERIC_MAX_HEALTH, 99000000).add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.25).add(EntityAttributes.GENERIC_KNOCKBACK_RESISTANCE, 1.0).add(EntityAttributes.GENERIC_ATTACK_DAMAGE, 100.0);
     }
 
     @Override

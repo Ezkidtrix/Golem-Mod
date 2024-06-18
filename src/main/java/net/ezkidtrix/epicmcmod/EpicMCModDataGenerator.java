@@ -1,8 +1,13 @@
 package net.ezkidtrix.epicmcmod;
 
 import net.ezkidtrix.epicmcmod.datagen.*;
+import net.ezkidtrix.epicmcmod.world.ModConfiguredFeatures;
+import net.ezkidtrix.epicmcmod.world.ModPlacedFeatures;
+import net.ezkidtrix.epicmcmod.world.dimension.ModDimensions;
 import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
+import net.minecraft.registry.RegistryBuilder;
+import net.minecraft.registry.RegistryKeys;
 
 public class EpicMCModDataGenerator implements DataGeneratorEntrypoint {
 	@Override
@@ -14,5 +19,12 @@ public class EpicMCModDataGenerator implements DataGeneratorEntrypoint {
 		pack.addProvider(ModLootTableProvider::new);
 		pack.addProvider(ModModelProvider::new);
 		pack.addProvider(ModRecipeProvider::new);
+		pack.addProvider(ModWorldGenerator::new);
+	}
+
+	public void buildRegistry(RegistryBuilder registryBuilder) {
+		registryBuilder.addRegistry(RegistryKeys.CONFIGURED_FEATURE, ModConfiguredFeatures::bootstrap);
+		registryBuilder.addRegistry(RegistryKeys.PLACED_FEATURE, ModPlacedFeatures::bootstrap);
+		registryBuilder.addRegistry(RegistryKeys.DIMENSION_TYPE, ModDimensions::bootstrapType);
 	}
 }

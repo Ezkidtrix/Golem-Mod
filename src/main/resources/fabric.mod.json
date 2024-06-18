@@ -1,9 +1,9 @@
 {
 	"schemaVersion": 1,
-	"id": "epicmod",
+	"id": "golem-mod",
 	"version": "${version}",
-	"name": "Ezkidtrix Mod",
-	"description": "Ezkidtrix's Mod :)",
+	"name": "Golem Mod",
+	"description": "Ezkidtrix's Golem Mod :)",
 	"authors": [
 		"Ezkidtrix"
 	],
@@ -12,7 +12,6 @@
 		"sources": "https://github.com/FabricMC/fabric-example-mod"
 	},
 	"license": "CC0-1.0",
-	"icon": "assets/epicmod/icon.png",
 	"environment": "*",
 	"entrypoints": {
 		"main": [
