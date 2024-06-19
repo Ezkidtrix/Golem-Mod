@@ -20,7 +20,7 @@ public class ModPlacedFeatures {
     public static void bootstrap(Registerable<PlacedFeature> context) {
         var configuredFeatureRegistryLookup = context.getRegistryLookup(RegistryKeys.CONFIGURED_FEATURE);
 
-        register(context, GOLEM_ORE_PLACED_KEY, configuredFeatureRegistryLookup.getOrThrow(ModConfiguredFeatures.GOLEM_ORE_KEY), ModOrePlacement.modifiersWithCount(10, // veins per chunk
+        register(context, GOLEM_ORE_PLACED_KEY, configuredFeatureRegistryLookup.getOrThrow(ModConfiguredFeatures.GOLEM_ORE_KEY), ModOrePlacement.modifiersWithCount(3, // veins per chunk
                 HeightRangePlacementModifier.uniform(YOffset.fixed(-80), YOffset.fixed(80))));
     }
 

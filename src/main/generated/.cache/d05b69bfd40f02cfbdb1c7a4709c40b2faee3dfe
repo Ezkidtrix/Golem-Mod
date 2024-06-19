@@ -1,6 +1,6 @@
-// 1.20.4	2024-06-18T14:21:33.544899	Golem Mod/Model Definitions
-9b8fbdb0d9ff416173e63b18c2ac7249de41b466 assets\golem-mod\models\block\golem_fence_inventory.json
+// 1.20.4	2024-06-18T20:29:27.6592413	Golem Mod/Model Definitions
 f667479079d106e721cf76f17a79dcf96cea469d assets\golem-mod\models\item\golem_boots_iron_trim.json
+9b8fbdb0d9ff416173e63b18c2ac7249de41b466 assets\golem-mod\models\block\golem_fence_inventory.json
 dbfc3326259180e8b3d4b62f58c219816bc317eb assets\golem-mod\models\item\golem_chestplate_iron_trim.json
 9b77158a1c1fcc57b8425435b58637218944867a assets\golem-mod\models\item\golem_helmet_netherite_trim.json
 8974b8b51b93e51d0e12a5ad1ab0e4854b7d28ab assets\golem-mod\models\item\golem_wall.json
@@ -26,8 +26,8 @@ a7c380eee8d863ece8d21474e41c6cb7d94f5195 assets\golem-mod\blockstates\golem_door
 ebd2a5645074f125fd12604edabdbde25c9b13c6 assets\golem-mod\models\item\golem_ingot.json
 a70fb46f06ff858b94893ec7370fb142710a58c9 assets\golem-mod\models\block\golem_button.json
 52ec18c5a9d94f5e8afdaac855342af8d3c88eff assets\golem-mod\models\item\golem_leggings_diamond_trim.json
-13503de889faa657de8d2a19b8ef3432c46697e1 assets\golem-mod\models\item\golem_slab.json
 15fc9f7ce660e258c2661a9dc74d1912aaa4a06a assets\golem-mod\models\block\golem_button_inventory.json
+13503de889faa657de8d2a19b8ef3432c46697e1 assets\golem-mod\models\item\golem_slab.json
 cbb13bc8f12f4725d11fd3329094d012bf52b935 assets\golem-mod\models\item\golem_chestplate_copper_trim.json
 590403f02aaaf1dbd89b232f41c8c4260d81a4dd assets\golem-mod\models\item\golem_helmet_iron_trim.json
 22978aea4adf8ecfd749ac4767f4d48aa2ec5d37 assets\golem-mod\models\item\golem_helmet_lapis_trim.json
