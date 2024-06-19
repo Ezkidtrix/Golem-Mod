@@ -1,6 +1,6 @@
-// 1.20.4	2024-06-18T20:29:27.6592413	Golem Mod/Model Definitions
-f667479079d106e721cf76f17a79dcf96cea469d assets\golem-mod\models\item\golem_boots_iron_trim.json
+// 1.20.4	2024-06-19T08:38:45.283385	Golem Mod/Model Definitions
 9b8fbdb0d9ff416173e63b18c2ac7249de41b466 assets\golem-mod\models\block\golem_fence_inventory.json
+f667479079d106e721cf76f17a79dcf96cea469d assets\golem-mod\models\item\golem_boots_iron_trim.json
 dbfc3326259180e8b3d4b62f58c219816bc317eb assets\golem-mod\models\item\golem_chestplate_iron_trim.json
 9b77158a1c1fcc57b8425435b58637218944867a assets\golem-mod\models\item\golem_helmet_netherite_trim.json
 8974b8b51b93e51d0e12a5ad1ab0e4854b7d28ab assets\golem-mod\models\item\golem_wall.json
@@ -55,6 +55,7 @@ b2f3e08b85831c206bb9bac2f535d54f8ef7df36 assets\golem-mod\models\block\golem_sta
 5885d1b9a94c7c82682caf4cd072dd0c7b5cc3fa assets\golem-mod\models\item\golem_helmet_diamond_trim.json
 2c4a7f667aec9f98cc25b1b69af56ffe40794da4 assets\golem-mod\blockstates\golem_pressure_plate.json
 14ff6bdef233b1d06bd48e46edec794c47c79115 assets\golem-mod\models\block\golem_trapdoor_open.json
+816f43942c36c086abf9cf71f186e0e27d30cbd0 assets\golem-mod\models\item\golem_music_disc.json
 e2c20686ef1034e8399a6488cd14c75b186fcf60 assets\golem-mod\models\item\golem_pickaxe.json
 80d46e0530bf6c9cb77a2c76e98389796f66f25e assets\golem-mod\models\item\golem_helmet_emerald_trim.json
 7383b23ef9db8098c8b70da3cad895c6d624222c assets\golem-mod\models\block\golem_fence_gate.json
@@ -112,5 +113,5 @@ b25798fcc9d4c2f34f68627142039df024118edc assets\golem-mod\models\block\golem_fen
 05ef72228757e23c74be37df9173a9a90f17372e assets\golem-mod\models\item\golem_leggings_copper_trim.json
 ee152a58373f37ec04e3c64cde06743b3d25c173 assets\golem-mod\blockstates\golem_trapdoor.json
 0b8742b7d30848e62b69b88d4b3311874a957b32 assets\golem-mod\models\block\golem_door_bottom_left.json
-0ef8bf2f59b3badd430c9cae2c4e0ae6ad6e7baa assets\golem-mod\models\block\golem_wall_post.json
 9ec27090ace862be886ff4da7364b06d220d7aca assets\golem-mod\models\block\golem_fence_gate_wall.json
+0ef8bf2f59b3badd430c9cae2c4e0ae6ad6e7baa assets\golem-mod\models\block\golem_wall_post.json

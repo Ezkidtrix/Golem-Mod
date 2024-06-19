@@ -40,7 +40,9 @@ public class ModModelProvider extends FabricModelProvider {
 
     public void generateItemModels(ItemModelGenerator itemModelGenerator) {
         itemModelGenerator.register(ModItems.MINI_GOLEM_SPAWN_EGG, new Model(Optional.of(new Identifier("item/template_spawn_egg")), Optional.empty()));
+
         itemModelGenerator.register(ModItems.GOLEM_INGOT, Models.GENERATED);
+        itemModelGenerator.register(ModItems.GOLEM_MUSIC_DISC, Models.GENERATED);
 
         itemModelGenerator.register(ModItems.GOLEM_SWORD, Models.HANDHELD);
         itemModelGenerator.register(ModItems.GOLEM_PICKAXE, Models.HANDHELD);

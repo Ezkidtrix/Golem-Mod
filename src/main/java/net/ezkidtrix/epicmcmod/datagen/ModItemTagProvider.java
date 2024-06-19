@@ -16,5 +16,8 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
     @Override
     protected void configure(RegistryWrapper.WrapperLookup arg) {
         getOrCreateTagBuilder(ItemTags.TRIMMABLE_ARMOR).add(ModItems.GOLEM_HELMET).add(ModItems.GOLEM_CHESTPLATE).add(ModItems.GOLEM_LEGGINGS).add(ModItems.GOLEM_BOOTS);
+
+        getOrCreateTagBuilder(ItemTags.CREEPER_DROP_MUSIC_DISCS).add(ModItems.GOLEM_MUSIC_DISC);
+        getOrCreateTagBuilder(ItemTags.MUSIC_DISCS).add(ModItems.GOLEM_MUSIC_DISC);
     }
 }

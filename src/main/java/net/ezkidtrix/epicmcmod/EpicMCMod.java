@@ -5,6 +5,7 @@ import net.ezkidtrix.epicmcmod.entity.ModEntities;
 import net.ezkidtrix.epicmcmod.entity.custom.MiniGolemEntity;
 import net.ezkidtrix.epicmcmod.item.ModItemGroups;
 import net.ezkidtrix.epicmcmod.item.ModItems;
+import net.ezkidtrix.epicmcmod.sounds.ModSounds;
 import net.ezkidtrix.epicmcmod.util.ModCustomTrades;
 import net.ezkidtrix.epicmcmod.world.gen.ModWorldGeneration;
 import net.fabricmc.api.ModInitializer;
@@ -28,6 +29,7 @@ public class EpicMCMod implements ModInitializer {
 		ModBlocks.registerModBlocks();
 
 		ModCustomTrades.registerCustomTrades();
+		ModSounds.registerSounds();
 
 		FabricDefaultAttributeRegistry.register(ModEntities.MiniGolem, MiniGolemEntity.createMiniGolemAttributes());
 

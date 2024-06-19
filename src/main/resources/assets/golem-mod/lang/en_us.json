@@ -34,5 +34,8 @@
   "block.golem-mod.golem_door": "Golem Door",
   "block.golem-mod.golem_trapdoor": "Golem Trapdoor",
 
-  "item.golem-mod.golem_seeds": "Golem Seeds"
+  "item.golem-mod.golem_seeds": "Golem Seeds",
+
+  "item.golem-mod.golem_music_disc": "Golem Music Disc",
+  "item.golem-mod.golem_music_disc.desc": "Ezkidtrix - Golem Music"
 }

@@ -43,6 +43,7 @@ public class ModItemGroups {
                         entries.add(ModBlocks.GOLEM_DOOR);
                         entries.add(ModBlocks.GOLEM_TRAPDOOR);
 
+                        entries.add(ModItems.GOLEM_MUSIC_DISC);
                         entries.add(ModItems.MINI_GOLEM_SPAWN_EGG);
                     }).build());
 

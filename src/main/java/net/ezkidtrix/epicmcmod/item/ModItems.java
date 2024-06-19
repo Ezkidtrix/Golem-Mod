@@ -3,6 +3,7 @@ package net.ezkidtrix.epicmcmod.item;
 import net.ezkidtrix.epicmcmod.EpicMCMod;
 import net.ezkidtrix.epicmcmod.block.ModBlocks;
 import net.ezkidtrix.epicmcmod.entity.ModEntities;
+import net.ezkidtrix.epicmcmod.sounds.ModSounds;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.item.*;
 import net.minecraft.registry.Registries;
@@ -25,6 +26,8 @@ public class ModItems {
     public static final Item GOLEM_BOOTS = registerItem("golem_boots", new ArmorItem(ModArmorMaterials.GOLEM, ArmorItem.Type.BOOTS, new FabricItemSettings()));
 
     public static final Item GOLEM_SEEDS = registerItem("golem_seeds", new AliasedBlockItem(ModBlocks.GOLEM_CROP, new FabricItemSettings()));
+
+    public static final Item GOLEM_MUSIC_DISC = registerItem("golem_music_disc", new MusicDiscItem(15, ModSounds.GOLEM_MUSIC, new FabricItemSettings().maxCount(1), 30));
 
     private static Item registerItem(String name, Item item) {
         return Registry.register(Registries.ITEM, new Identifier(EpicMCMod.MOD_ID, name), item);
