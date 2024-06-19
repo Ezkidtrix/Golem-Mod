@@ -1,6 +1,7 @@
 package net.ezkidtrix.epicmcmod.block;
 
 import net.ezkidtrix.epicmcmod.EpicMCMod;
+import net.ezkidtrix.epicmcmod.block.custom.GolemCropBlock;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.*;
@@ -9,8 +10,6 @@ import net.minecraft.item.Item;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
-
-import java.awt.*;
 
 public class ModBlocks {
     public static final Block GOLEM_BLOCK = registerBlock("golem_block", new Block(FabricBlockSettings.copyOf(Blocks.EMERALD_BLOCK)));
@@ -31,6 +30,7 @@ public class ModBlocks {
     public static final Block GOLEM_DOOR = registerBlock("golem_door", new DoorBlock(BlockSetType.IRON, FabricBlockSettings.copyOf(Blocks.IRON_BLOCK)));
     public static final Block GOLEM_TRAPDOOR = registerBlock("golem_trapdoor", new TrapdoorBlock(BlockSetType.IRON, FabricBlockSettings.copyOf(Blocks.IRON_BLOCK)));
 
+    public static final Block GOLEM_CROP = Registry.register(Registries.BLOCK, new Identifier(EpicMCMod.MOD_ID, "golem_crop"), new GolemCropBlock(FabricBlockSettings.copyOf(Blocks.WHEAT)));
 
     private static Block registerBlock(String name, Block block) {
         registerBlockItem(name, block);

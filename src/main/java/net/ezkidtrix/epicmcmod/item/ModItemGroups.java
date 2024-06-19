@@ -16,6 +16,7 @@ public class ModItemGroups {
             FabricItemGroup.builder().displayName(Text.translatable("itemgroup.golemitems"))
                     .icon(() -> new ItemStack(ModItems.GOLEM_INGOT)).entries((displayContext, entries) -> {
                         entries.add(ModItems.GOLEM_INGOT);
+                        entries.add(ModItems.GOLEM_SEEDS);
 
                         entries.add(ModItems.GOLEM_SWORD);
                         entries.add(ModItems.GOLEM_PICKAXE);

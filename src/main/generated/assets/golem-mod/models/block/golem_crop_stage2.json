@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/crop",
+  "textures": {
+    "crop": "golem-mod:block/golem_crop_stage2"
+  }
+}

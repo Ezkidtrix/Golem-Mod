@@ -1,6 +1,7 @@
 package net.ezkidtrix.epicmcmod.datagen;
 
 import net.ezkidtrix.epicmcmod.block.ModBlocks;
+import net.ezkidtrix.epicmcmod.block.custom.GolemCropBlock;
 import net.ezkidtrix.epicmcmod.item.ModItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
@@ -33,6 +34,8 @@ public class ModModelProvider extends FabricModelProvider {
 
         blockStateModelGenerator.registerDoor(ModBlocks.GOLEM_DOOR);
         blockStateModelGenerator.registerTrapdoor(ModBlocks.GOLEM_TRAPDOOR);
+
+        blockStateModelGenerator.registerCrop(ModBlocks.GOLEM_CROP, GolemCropBlock.AGE, 0, 1, 2);
     }
 
     public void generateItemModels(ItemModelGenerator itemModelGenerator) {

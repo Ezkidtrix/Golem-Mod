@@ -32,5 +32,7 @@
   "block.golem-mod.golem_wall": "Golem Wall",
 
   "block.golem-mod.golem_door": "Golem Door",
-  "block.golem-mod.golem_trapdoor": "Golem Trapdoor"
+  "block.golem-mod.golem_trapdoor": "Golem Trapdoor",
+
+  "item.golem-mod.golem_seeds": "Golem Seeds"
 }

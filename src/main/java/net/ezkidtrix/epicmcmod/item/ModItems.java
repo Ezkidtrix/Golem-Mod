@@ -1,6 +1,7 @@
 package net.ezkidtrix.epicmcmod.item;
 
 import net.ezkidtrix.epicmcmod.EpicMCMod;
+import net.ezkidtrix.epicmcmod.block.ModBlocks;
 import net.ezkidtrix.epicmcmod.entity.ModEntities;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.item.*;
@@ -22,6 +23,8 @@ public class ModItems {
     public static final Item GOLEM_CHESTPLATE = registerItem("golem_chestplate", new ArmorItem(ModArmorMaterials.GOLEM, ArmorItem.Type.CHESTPLATE, new FabricItemSettings()));
     public static final Item GOLEM_LEGGINGS = registerItem("golem_leggings", new ArmorItem(ModArmorMaterials.GOLEM, ArmorItem.Type.LEGGINGS, new FabricItemSettings()));
     public static final Item GOLEM_BOOTS = registerItem("golem_boots", new ArmorItem(ModArmorMaterials.GOLEM, ArmorItem.Type.BOOTS, new FabricItemSettings()));
+
+    public static final Item GOLEM_SEEDS = registerItem("golem_seeds", new AliasedBlockItem(ModBlocks.GOLEM_CROP, new FabricItemSettings()));
 
     private static Item registerItem(String name, Item item) {
         return Registry.register(Registries.ITEM, new Identifier(EpicMCMod.MOD_ID, name), item);

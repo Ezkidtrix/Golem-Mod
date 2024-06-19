@@ -27,7 +27,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:golem_button"
+        "recipe": "minecraft:golem_fence"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -41,7 +41,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:golem_button"
+      "minecraft:golem_fence"
     ]
   }
 }

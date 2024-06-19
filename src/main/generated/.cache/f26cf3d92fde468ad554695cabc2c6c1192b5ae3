@@ -1,7 +1,10 @@
-// 1.20.4	2024-06-17T21:22:49.5896478	Golem Mod/Block Loot Tables
-d1d8d44f84eb07da9b71be7161e61d90d0e9e71b data\golem-mod\loot_tables\blocks\golem_block.json
+// 1.20.4	2024-06-18T14:21:33.5428989	Golem Mod/Block Loot Tables
 003a6abb229b209654fe2bc24f41f7520b459986 data\golem-mod\loot_tables\blocks\golem_fence_gate.json
+51b232a10c828678f02d81ee166140413967bfc9 data\golem-mod\loot_tables\blocks\golem_crop.json
 2f3717d2b2abe125b59fed27a2c2d2317b2634d5 data\golem-mod\loot_tables\blocks\golem_fence.json
+59f0c07739df28a79e23fa9a1db3e448e0acf3ea data\golem-mod\loot_tables\blocks\golem_trapdoor.json
+26fc494bcd9c8b930f9a2b81382c2f03492ee35e data\golem-mod\loot_tables\blocks\golem_wall.json
+d1d8d44f84eb07da9b71be7161e61d90d0e9e71b data\golem-mod\loot_tables\blocks\golem_block.json
 bae1dcd0a00472f7c8fee601c4049acb105b5813 data\golem-mod\loot_tables\blocks\golem_button.json
 250031cc5268c8d8670e4c023748b90f9726fd23 data\golem-mod\loot_tables\blocks\golem_slab.json
 a8320e29b6024fab69d2e1ad8a57933c0340bad4 data\golem-mod\loot_tables\blocks\golem_door.json
@@ -9,5 +12,3 @@ c861ca4089ea1c5685ce841b346326c1a07ce9b6 data\golem-mod\loot_tables\blocks\golem
 0c5f0d5a892693cb008188623514676c90d780ea data\golem-mod\loot_tables\blocks\golem_stairs.json
 a7c788dd9e1886c48d9fb17bbdd9de940b47a96b data\golem-mod\loot_tables\blocks\golem_pressure_plate.json
 c861ca4089ea1c5685ce841b346326c1a07ce9b6 data\golem-mod\loot_tables\blocks\deepslate_golem_ore.json
-59f0c07739df28a79e23fa9a1db3e448e0acf3ea data\golem-mod\loot_tables\blocks\golem_trapdoor.json
-26fc494bcd9c8b930f9a2b81382c2f03492ee35e data\golem-mod\loot_tables\blocks\golem_wall.json

@@ -1,15 +1,14 @@
 {
 	"schemaVersion": 1,
 	"id": "golem-mod",
-	"version": "0.2",
+	"version": "0.4",
 	"name": "Golem Mod",
 	"description": "Ezkidtrix's Golem Mod :)",
 	"authors": [
 		"Ezkidtrix"
 	],
 	"contact": {
-		"homepage": "https://fabricmc.net/",
-		"sources": "https://github.com/FabricMC/fabric-example-mod"
+		"sources": "https://github.com/Ezkidtrix/Golem-Mod-1.20.4"
 	},
 	"license": "CC0-1.0",
 	"environment": "*",
