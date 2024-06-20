@@ -45,6 +45,8 @@ public class ModItemGroups {
 
                         entries.add(ModItems.GOLEM_MUSIC_DISC);
                         entries.add(ModItems.MINI_GOLEM_SPAWN_EGG);
+
+                        entries.add(ModItems.ICE_MINI_GOLEM_SPAWN_EGG);
                     }).build());
 
     public static void registerItemGroups() {

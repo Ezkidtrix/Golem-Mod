@@ -12,7 +12,9 @@ import net.minecraft.util.Identifier;
 
 public class ModItems {
     public static final Item GOLEM_INGOT = registerItem("golem_ingot", new Item(new FabricItemSettings()));
+
     public static final Item MINI_GOLEM_SPAWN_EGG = registerItem("mini_golem_spawn_egg", new SpawnEggItem(ModEntities.MiniGolem, 0x757575, 0x839c83, new FabricItemSettings()));
+    public static final Item ICE_MINI_GOLEM_SPAWN_EGG = registerItem("ice_mini_golem_spawn_egg", new SpawnEggItem(ModEntities.MiniGolem, 0xffffff, 0x8ffff0, new FabricItemSettings()));
 
     public static final Item GOLEM_SWORD = registerItem("golem_sword", new SwordItem(ModToolMaterial.GOLEM, 12, 10, new FabricItemSettings()));
     public static final Item GOLEM_PICKAXE = registerItem("golem_pickaxe", new PickaxeItem(ModToolMaterial.GOLEM, 5, 3, new FabricItemSettings()));

@@ -13,7 +13,6 @@ import net.minecraft.entity.data.DataTracker;
 import net.minecraft.entity.data.TrackedData;
 import net.minecraft.entity.data.TrackedDataHandlerRegistry;
 import net.minecraft.entity.mob.*;
-import net.minecraft.entity.passive.AnimalEntity;
 import net.minecraft.entity.passive.IronGolemEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.fluid.Fluids;
@@ -30,8 +29,8 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.UUID;
 
-public class MiniGolemEntity extends IronGolemEntity implements Angerable  {
-    protected static final TrackedData<Byte> IRON_GOLEM_FLAGS = DataTracker.registerData(MiniGolemEntity.class, TrackedDataHandlerRegistry.BYTE);
+public class IceMiniGolemEntity extends IronGolemEntity implements Angerable  {
+    protected static final TrackedData<Byte> IRON_GOLEM_FLAGS = DataTracker.registerData(IceMiniGolemEntity.class, TrackedDataHandlerRegistry.BYTE);
     private static final int HEALTH_PER_INGOT = 25;
     private int attackTicksLeft;
     private int lookingAtVillagerTicksLeft;
@@ -40,7 +39,7 @@ public class MiniGolemEntity extends IronGolemEntity implements Angerable  {
     @Nullable
     private UUID angryAt;
 
-    public MiniGolemEntity(EntityType<? extends IronGolemEntity> entityType, World world) {
+    public IceMiniGolemEntity(EntityType<? extends IronGolemEntity> entityType, World world) {
         super(entityType, world);
     }
 
@@ -60,7 +59,7 @@ public class MiniGolemEntity extends IronGolemEntity implements Angerable  {
         this.targetSelector.add(4, new UniversalAngerGoal<IronGolemEntity>(this, false));
     }
 
-    public static DefaultAttributeContainer.Builder createMiniGolemAttributes() {
+    public static DefaultAttributeContainer.Builder createIceMiniGolemAttributes() {
         return MobEntity.createMobAttributes().add(EntityAttributes.GENERIC_MAX_HEALTH, 99000000).add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.25).add(EntityAttributes.GENERIC_KNOCKBACK_RESISTANCE, 1.0).add(EntityAttributes.GENERIC_ATTACK_DAMAGE, 100.0);
     }
 

@@ -4,6 +4,9 @@
   "item.golem-mod.mini_golem_spawn_egg":  "Mini Golem Spawn Egg",
   "entity.golem-mod.mini_golem": "Mini Golem",
 
+  "entity.golem-mod.ice_mini_golem": "Ice Mini Golem",
+  "item.golem-mod.ice_mini_golem_spawn_egg": "Ice Mini Golem Spawn Egg",
+
   "item.golem-mod.golem_ingot": "Golem Ingot",
 
   "block.golem-mod.golem_block": "Golem Block",
