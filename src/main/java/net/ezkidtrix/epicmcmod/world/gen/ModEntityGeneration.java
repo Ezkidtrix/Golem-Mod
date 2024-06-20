@@ -13,5 +13,8 @@ public class ModEntityGeneration {
     public static void addSpawns() {
         BiomeModifications.addSpawn(BiomeSelectors.includeByKey(BiomeKeys.FOREST), SpawnGroup.CREATURE, ModEntities.MiniGolem, 30, 1, 1);
         SpawnRestriction.register(ModEntities.MiniGolem, SpawnRestriction.Location.ON_GROUND, Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, MobEntity::canMobSpawn);
+
+        BiomeModifications.addSpawn(BiomeSelectors.includeByKey(BiomeKeys.SNOWY_TAIGA), SpawnGroup.CREATURE, ModEntities.IceMiniGolem, 45, 1, 1);
+        SpawnRestriction.register(ModEntities.IceMiniGolem, SpawnRestriction.Location.ON_GROUND, Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, MobEntity::canMobSpawn);
     }
 }

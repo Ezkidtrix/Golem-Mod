@@ -15,6 +15,7 @@ public class IceMiniGolemModel<T extends IceMiniGolemEntity> extends EntityModel
 	public static TexturedModelData getTexturedModelData() {
 		ModelData modelData = new ModelData();
 		ModelPartData modelPartData = modelData.getRoot();
+
 		ModelPartData golem = modelPartData.addChild("golem", ModelPartBuilder.create(), ModelTransform.pivot(0.0F, 24.0F, 0.0F));
 
 		ModelPartData body = golem.addChild("body", ModelPartBuilder.create().uv(0, 40).cuboid(-9.0F, 11.0F, -6.0F, 18.0F, 10.0F, 11.0F, new Dilation(0.0F)), ModelTransform.pivot(0.0F, -31.0F, 0.0F));
