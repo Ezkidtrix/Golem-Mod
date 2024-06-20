@@ -2,6 +2,7 @@ package net.ezkidtrix.epicmcmod.item;
 
 import net.ezkidtrix.epicmcmod.EpicMCMod;
 import net.ezkidtrix.epicmcmod.block.ModBlocks;
+import net.ezkidtrix.epicmcmod.enchantment.ModEnchantments;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;

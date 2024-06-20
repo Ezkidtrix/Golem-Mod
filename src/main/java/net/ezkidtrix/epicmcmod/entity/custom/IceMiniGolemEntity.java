@@ -1,6 +1,14 @@
 package net.ezkidtrix.epicmcmod.entity.custom;
 
+import com.ibm.icu.text.Normalizer2;
+import net.ezkidtrix.epicmcmod.enchantment.GolemEnchantment;
+import net.ezkidtrix.epicmcmod.enchantment.ModEnchantments;
+import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.block.BlockState;
+import net.minecraft.enchantment.Enchantment;
+import net.minecraft.enchantment.EnchantmentHelper;
+import net.minecraft.enchantment.EnchantmentLevelEntry;
+import net.minecraft.enchantment.Enchantments;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityStatuses;
 import net.minecraft.entity.EntityType;
@@ -16,6 +24,7 @@ import net.minecraft.entity.mob.*;
 import net.minecraft.entity.passive.IronGolemEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.fluid.Fluids;
+import net.minecraft.item.*;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundEvents;
@@ -228,6 +237,7 @@ public class IceMiniGolemEntity extends IronGolemEntity implements Angerable  {
     @Override
     public void onDeath(DamageSource damageSource) {
         super.onDeath(damageSource);
+        dropStack(EnchantedBookItem.forEnchantment(new EnchantmentLevelEntry(ModEnchantments.GOLEM_ENCHANTMENT, (int) (Math.random() * GolemEnchantment.MAX_LEVEL + 1))));
     }
 
     @Override

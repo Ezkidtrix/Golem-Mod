@@ -40,5 +40,8 @@
   "item.golem-mod.golem_seeds": "Golem Seeds",
 
   "item.golem-mod.golem_music_disc": "Golem Music Disc",
-  "item.golem-mod.golem_music_disc.desc": "Ezkidtrix - Golem Music"
+  "item.golem-mod.golem_music_disc.desc": "Ezkidtrix - Golem Music",
+
+  "item.golem-mod.golem_enchanted_book": "Golem Enchanted Book",
+  "enchantment.golem-mod.golem_enchantment": "Golem"
 }
