@@ -48,5 +48,6 @@
   "item.golem-mod.mini_creeper_spawn_egg": "Mini Creeper Spawn Egg",
   "entity.golem-mod.mini_creeper": "Mini Creeper",
 
-  "enchantment.golem-mod.chunker_enchantment": "Chunker"
+  "enchantment.golem-mod.chunker_enchantment": "Chunker",
+  "item.golem-mod.chunker_enchanted_book": "Chunker Enchanted Book"
 }

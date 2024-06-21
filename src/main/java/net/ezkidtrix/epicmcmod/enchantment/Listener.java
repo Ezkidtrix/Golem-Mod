@@ -2,11 +2,13 @@ package net.ezkidtrix.epicmcmod.enchantment;
 
 import net.fabricmc.fabric.api.event.player.PlayerBlockBreakEvents;
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.registry.tag.BlockTags;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.chunk.Chunk;
@@ -27,9 +29,15 @@ public class Listener {
                     for (int y = world.getBottomY(); y < world.getTopY(); y++) {
                         for (int z = startZ; z <= endZ; z++) {
                             BlockPos currentPos = new BlockPos(x, y, z);
+
                             if (world.getBlockState(currentPos).getBlock() != Blocks.BEDROCK) {
+                                BlockState type = world.getBlockState(currentPos).getBlock().getDefaultState();
+
+                                if (type.isIn(BlockTags.STONE_ORE_REPLACEABLES) || type.isIn(BlockTags.DEEPSLATE_ORE_REPLACEABLES)) {
+                                    player.giveItemStack(new ItemStack(world.getBlockState(currentPos).getBlock()));
+                                }
+
                                 world.setBlockState(currentPos, Blocks.AIR.getDefaultState());
-                                player.giveItemStack(new ItemStack(getBlock(world, currentPos)));
                             }
                         }
                     }
@@ -44,9 +52,5 @@ public class Listener {
 
     public static boolean hasEnchantment(Enchantment enchant, PlayerEntity player) {
         return EnchantmentHelper.getLevel(enchant, player.getMainHandStack()) > 0;
-    }
-
-    public static Block getBlock(World world, BlockPos pos) {
-        return world.getBlockState(pos).getBlock();
     }
 }
