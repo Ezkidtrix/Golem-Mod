@@ -1,6 +1,7 @@
 package net.ezkidtrix.epicmcmod;
 
 import net.ezkidtrix.epicmcmod.block.ModBlocks;
+import net.ezkidtrix.epicmcmod.enchantment.Listener;
 import net.ezkidtrix.epicmcmod.enchantment.ModEnchantments;
 import net.ezkidtrix.epicmcmod.entity.ModEntities;
 import net.ezkidtrix.epicmcmod.entity.custom.IceMiniGolemEntity;
@@ -35,6 +36,8 @@ public class EpicMCMod implements ModInitializer {
 		ModSounds.registerSounds();
 
 		ModEnchantments.registerModEnchantments();
+
+		Listener.register();
 
 		FabricDefaultAttributeRegistry.register(ModEntities.MiniGolem, MiniGolemEntity.createMiniGolemAttributes());
 		FabricDefaultAttributeRegistry.register(ModEntities.IceMiniGolem, IceMiniGolemEntity.createIceMiniGolemAttributes());
