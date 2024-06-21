@@ -33,7 +33,7 @@ public class Listener {
                             if (world.getBlockState(currentPos).getBlock() != Blocks.BEDROCK) {
                                 BlockState type = world.getBlockState(currentPos).getBlock().getDefaultState();
 
-                                if (type.isIn(BlockTags.STONE_ORE_REPLACEABLES) || type.isIn(BlockTags.DEEPSLATE_ORE_REPLACEABLES)) {
+                                if (type.isIn(BlockTags.DIAMOND_ORES) || type.isIn(BlockTags.IRON_ORES) || type.isIn(BlockTags.GOLD_ORES) || type.isIn(BlockTags.EMERALD_ORES)) {
                                     player.giveItemStack(new ItemStack(world.getBlockState(currentPos).getBlock()));
                                 }
 

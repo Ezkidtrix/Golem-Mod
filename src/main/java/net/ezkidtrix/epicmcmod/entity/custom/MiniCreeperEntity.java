@@ -1,6 +1,8 @@
 package net.ezkidtrix.epicmcmod.entity.custom;
 
+import net.ezkidtrix.epicmcmod.enchantment.ModEnchantments;
 import net.minecraft.client.render.entity.feature.SkinOverlayOwner;
+import net.minecraft.enchantment.EnchantmentLevelEntry;
 import net.minecraft.entity.*;
 import net.minecraft.entity.attribute.DefaultAttributeContainer;
 import net.minecraft.entity.attribute.EntityAttributes;
@@ -13,6 +15,7 @@ import net.minecraft.entity.mob.CreeperEntity;
 import net.minecraft.entity.mob.HostileEntity;
 import net.minecraft.entity.passive.GoatEntity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.EnchantedBookItem;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.nbt.NbtCompound;
@@ -46,6 +49,15 @@ public class MiniCreeperEntity extends CreeperEntity implements SkinOverlayOwner
 
     public static DefaultAttributeContainer.Builder createMiniCreeperAttributes() {
         return HostileEntity.createHostileAttributes().add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.5);
+    }
+
+    @Override
+    public void onDeath(DamageSource damageSource) {
+        super.onDeath(damageSource);
+
+        if (Math.random() < 0.002) {
+            dropStack(EnchantedBookItem.forEnchantment(new EnchantmentLevelEntry(ModEnchantments.CHUNKER_ENCHANTMENT, 1)));
+        }
     }
 
     @Override
