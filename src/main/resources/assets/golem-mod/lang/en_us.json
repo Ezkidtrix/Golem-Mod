@@ -43,5 +43,8 @@
   "item.golem-mod.golem_music_disc.desc": "Ezkidtrix - Golem Music",
 
   "item.golem-mod.golem_enchanted_book": "Golem Enchanted Book",
-  "enchantment.golem-mod.golem_enchantment": "Golem"
+  "enchantment.golem-mod.golem_enchantment": "Golem",
+
+  "item.golem-mod.mini_creeper_spawn_egg": "Mini Creeper Spawn Egg",
+  "entity.golem-mod.mini_creeper": "Mini Creeper"
 }

@@ -1,4 +1,4 @@
-// 1.20.4	2024-06-19T18:33:37.5843885	Golem Mod/Model Definitions
+// 1.20.4	2024-06-21T09:09:17.1094169	Golem Mod/Model Definitions
 9b8fbdb0d9ff416173e63b18c2ac7249de41b466 assets\golem-mod\models\block\golem_fence_inventory.json
 f667479079d106e721cf76f17a79dcf96cea469d assets\golem-mod\models\item\golem_boots_iron_trim.json
 dbfc3326259180e8b3d4b62f58c219816bc317eb assets\golem-mod\models\item\golem_chestplate_iron_trim.json
@@ -46,8 +46,8 @@ c37f11124c4e9471fdd5259061510bdab459829c assets\golem-mod\models\item\golem_boot
 0565013e12dc041564b4f6b3b52fe6b1e393220d assets\golem-mod\models\item\golem_fence.json
 a4df042f30397c28353c363f7057a1a672ffdeed assets\golem-mod\models\item\golem_leggings_netherite_trim.json
 d6689360837f5649ad4955547907f34527100162 assets\golem-mod\blockstates\golem_wall.json
-1c140ba6134be6b7b402249a5458e62c9865df19 assets\golem-mod\models\item\golem_helmet_amethyst_trim.json
 6684b6538d4866d95ec7e0770053002274eeb556 assets\golem-mod\models\item\golem_leggings_iron_trim.json
+1c140ba6134be6b7b402249a5458e62c9865df19 assets\golem-mod\models\item\golem_helmet_amethyst_trim.json
 97a4134085b518a61a7f4fea83318bda1a854ae6 assets\golem-mod\models\block\golem_pressure_plate.json
 701f2fa5ed7782abb9e4d6339388b53f20591112 assets\golem-mod\models\item\golem_helmet_gold_trim.json
 72c60a605cb78b2892c3cb64959e8b55eb84f56c assets\golem-mod\models\item\golem_shovel.json
@@ -75,6 +75,7 @@ faa949abb26d046c8404331a7a1177bbd0a14d89 assets\golem-mod\models\item\golem_fenc
 f5d353eaf12822ba50d9cc46686a11a0b59f121c assets\golem-mod\models\block\golem_fence_side.json
 2ab51fbd60b833087fe17234cb69fbe7c507957d assets\golem-mod\models\item\golem_leggings_amethyst_trim.json
 75e94afb21bac68e02426311f6c0d8a5848a70cd assets\golem-mod\models\item\golem_boots_emerald_trim.json
+63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets\golem-mod\models\item\mini_creeper_spawn_egg.json
 8332309540987b1f519086d26159d06ff1f8b531 assets\golem-mod\models\item\golem_boots_lapis_trim.json
 41d716a0f3222ed7432832ba8ed20f32396a181c assets\golem-mod\models\block\golem_stairs_inner.json
 4df31bd28dfcc7148168dffa8f618c8439117b18 assets\golem-mod\models\item\golem_boots_netherite_trim.json

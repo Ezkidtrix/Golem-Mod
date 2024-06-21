@@ -4,6 +4,7 @@ import net.ezkidtrix.epicmcmod.block.ModBlocks;
 import net.ezkidtrix.epicmcmod.enchantment.ModEnchantments;
 import net.ezkidtrix.epicmcmod.entity.ModEntities;
 import net.ezkidtrix.epicmcmod.entity.custom.IceMiniGolemEntity;
+import net.ezkidtrix.epicmcmod.entity.custom.MiniCreeperEntity;
 import net.ezkidtrix.epicmcmod.entity.custom.MiniGolemEntity;
 import net.ezkidtrix.epicmcmod.item.ModItemGroups;
 import net.ezkidtrix.epicmcmod.item.ModItems;
@@ -37,6 +38,8 @@ public class EpicMCMod implements ModInitializer {
 
 		FabricDefaultAttributeRegistry.register(ModEntities.MiniGolem, MiniGolemEntity.createMiniGolemAttributes());
 		FabricDefaultAttributeRegistry.register(ModEntities.IceMiniGolem, IceMiniGolemEntity.createIceMiniGolemAttributes());
+
+		FabricDefaultAttributeRegistry.register(ModEntities.MiniCreeper, MiniCreeperEntity.createMiniCreeperAttributes());
 
 		CustomPortalBuilder.beginPortal()
 				.frameBlock(ModBlocks.GOLEM_BLOCK)

@@ -9,4 +9,6 @@ public class ModModelLayers {
             new EntityModelLayer(new Identifier(EpicMCMod.MOD_ID, "mini_golem"), "main");
     public static final EntityModelLayer IceMiniGolem =
             new EntityModelLayer(new Identifier(EpicMCMod.MOD_ID, "ice_mini_golem"), "main");
+
+    public static final EntityModelLayer MiniCreeper = new EntityModelLayer(new Identifier(EpicMCMod.MOD_ID, "mini_creeper"), "main");
 }

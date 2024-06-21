@@ -14,5 +14,8 @@ public class EpicMCModClient implements ClientModInitializer {
 
         EntityRendererRegistry.register(ModEntities.IceMiniGolem, IceMiniGolemRenderer::new);
         EntityModelLayerRegistry.registerModelLayer(ModModelLayers.IceMiniGolem, IceMiniGolemModel::getTexturedModelData);
+
+        EntityRendererRegistry.register(ModEntities.MiniCreeper, MiniCreeperRenderer::new);
+        EntityModelLayerRegistry.registerModelLayer(ModModelLayers.MiniCreeper, MiniCreeperModel::getTexturedModelData);
     }
 }
