@@ -1,6 +1,10 @@
 package net.ezkidtrix.epicmcmod.entity.custom;
 
+import net.ezkidtrix.epicmcmod.enchantment.GolemEnchantment;
+import net.ezkidtrix.epicmcmod.enchantment.ModEnchantments;
+import net.ezkidtrix.epicmcmod.enchantment.SphererEnchantment;
 import net.minecraft.block.BlockState;
+import net.minecraft.enchantment.EnchantmentLevelEntry;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityStatuses;
 import net.minecraft.entity.EntityType;
@@ -17,6 +21,7 @@ import net.minecraft.entity.passive.AnimalEntity;
 import net.minecraft.entity.passive.IronGolemEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.fluid.Fluids;
+import net.minecraft.item.EnchantedBookItem;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundEvents;
@@ -229,6 +234,10 @@ public class MiniGolemEntity extends IronGolemEntity implements Angerable  {
     @Override
     public void onDeath(DamageSource damageSource) {
         super.onDeath(damageSource);
+
+        if (Math.random() < 0.001) {
+            dropStack(EnchantedBookItem.forEnchantment(new EnchantmentLevelEntry(ModEnchantments.SPHERER_ENCHANTMENT, (int) (Math.random() * SphererEnchantment.MAX_LEVEL + 1))));
+        }
     }
 
     @Override

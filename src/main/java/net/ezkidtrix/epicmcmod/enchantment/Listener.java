@@ -1,5 +1,6 @@
 package net.ezkidtrix.epicmcmod.enchantment;
 
+import net.ezkidtrix.epicmcmod.block.ModBlocks;
 import net.fabricmc.fabric.api.event.player.PlayerBlockBreakEvents;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
@@ -33,11 +34,38 @@ public class Listener {
                             if (world.getBlockState(currentPos).getBlock() != Blocks.BEDROCK) {
                                 BlockState type = world.getBlockState(currentPos).getBlock().getDefaultState();
 
-                                if (type.isIn(BlockTags.DIAMOND_ORES) || type.isIn(BlockTags.IRON_ORES) || type.isIn(BlockTags.GOLD_ORES) || type.isIn(BlockTags.EMERALD_ORES)) {
+                                if (type.isIn(BlockTags.DIAMOND_ORES) || type.isIn(BlockTags.IRON_ORES) || type.isIn(BlockTags.GOLD_ORES) || type.isIn(BlockTags.EMERALD_ORES) || type.isOf(Blocks.ANCIENT_DEBRIS) || type.isOf(ModBlocks.GOLEM_ORE) || type.isOf(ModBlocks.DEEPSLATE_GOLEM_ORE)) {
                                     player.giveItemStack(new ItemStack(world.getBlockState(currentPos).getBlock()));
                                 }
 
                                 world.setBlockState(currentPos, Blocks.AIR.getDefaultState());
+                            }
+                        }
+                    }
+                }
+
+                return false;
+            } else if (hasEnchantment(ModEnchantments.SPHERER_ENCHANTMENT, player)) {
+                if (!world.isClient()) {
+                    int radius = EnchantmentHelper.getLevel(ModEnchantments.SPHERER_ENCHANTMENT, player.getMainHandStack());
+
+                    for (int x = -radius; x <= radius; x++) {
+                        for (int y = -radius; y <= radius; y++) {
+                            for (int z = -radius; z <= radius; z++) {
+                                if (Math.sqrt(x * x + y * y + z * z) <= radius) {
+                                    BlockPos targetPos = pos.add(x, y, z);
+                                    BlockState blockState = world.getBlockState(targetPos);
+
+                                    if (!blockState.isAir()) {
+                                        BlockState type = world.getBlockState(targetPos).getBlock().getDefaultState();
+
+                                        if (type.isIn(BlockTags.DIAMOND_ORES) || type.isIn(BlockTags.IRON_ORES) || type.isIn(BlockTags.GOLD_ORES) || type.isIn(BlockTags.EMERALD_ORES) || type.isOf(Blocks.ANCIENT_DEBRIS) || type.isOf(ModBlocks.GOLEM_ORE) || type.isOf(ModBlocks.DEEPSLATE_GOLEM_ORE)) {
+                                            player.giveItemStack(new ItemStack(type.getBlock().asItem()));
+                                        }
+
+                                        world.setBlockState(targetPos, Blocks.AIR.getDefaultState());
+                                    }
+                                }
                             }
                         }
                     }
