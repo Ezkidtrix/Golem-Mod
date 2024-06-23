@@ -20,6 +20,7 @@ public class EpicMCModDataGenerator implements DataGeneratorEntrypoint {
 		pack.addProvider(ModModelProvider::new);
 		pack.addProvider(ModRecipeProvider::new);
 		pack.addProvider(ModWorldGenerator::new);
+		pack.addProvider(ModPoiTagProvider::new);
 	}
 
 	public void buildRegistry(RegistryBuilder registryBuilder) {
