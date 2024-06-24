@@ -1,15 +1,19 @@
 package net.ezkidtrix.epicmcmod.enchantment;
 
 import net.ezkidtrix.epicmcmod.block.ModBlocks;
+import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
 import net.fabricmc.fabric.api.event.player.PlayerBlockBreakEvents;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentHelper;
+import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.registry.tag.BlockTags;
+import net.minecraft.server.MinecraftServer;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.chunk.Chunk;
@@ -76,6 +80,37 @@ public class Listener {
                 return true;
             }
         });
+
+        ServerTickEvents.START_SERVER_TICK.register(new ServerTickEvents.StartTick() {
+            @Override
+            public void onStartTick(MinecraftServer server) {
+                server.getPlayerManager().getPlayerList().forEach(player -> checkFlying(player));
+            }
+        });
+    }
+
+    public static void checkFlying(PlayerEntity player) {
+        if (player.isFallFlying() && player.getEquippedStack(EquipmentSlot.CHEST).getItem() == Items.ELYTRA && hasEnchantment(ModEnchantments.CLEARER_ENCHANTMENT, player)) {
+            int radius = 8;
+
+            BlockPos pos = player.getBlockPos();
+            World world = player.getWorld();
+
+            for (int x = -radius; x <= radius; x++) {
+                for (int y = -radius; y <= radius; y++) {
+                    for (int z = -radius; z <= radius; z++) {
+                        if (Math.sqrt(x * x + y * y + z * z) <= radius) {
+                            BlockPos targetPos = pos.add(x, y, z);
+                            BlockState blockState = world.getBlockState(targetPos);
+
+                            if (!blockState.isAir()) {
+                                world.setBlockState(targetPos, Blocks.AIR.getDefaultState());
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 
     public static boolean hasEnchantment(Enchantment enchant, PlayerEntity player) {

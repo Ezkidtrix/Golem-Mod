@@ -54,5 +54,8 @@
   "enchantment.golem-mod.spherer_enchantment": "Spherer",
   "item.golem-mod.spherer_enchanted_book": "Spherer Enchanted Book",
 
-  "entity.minecraft.villager.golem_master": "Golem Scammer"
+  "entity.minecraft.villager.golem_master": "Golem Scammer",
+
+  "enchantment.golem-mod.clearer_enchantment": "Clearer",
+  "item.golem-mod.clearer_enchanted_book": "Clearer Enchanted Book"
 }

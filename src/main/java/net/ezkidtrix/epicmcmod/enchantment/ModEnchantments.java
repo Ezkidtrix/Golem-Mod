@@ -11,6 +11,8 @@ public class ModEnchantments {
     public static Enchantment CHUNKER_ENCHANTMENT = registerEnchantment("chunker_enchantment", new ChunkerEnchantment());
     public static Enchantment SPHERER_ENCHANTMENT = registerEnchantment("spherer_enchantment", new SphererEnchantment());
 
+    public static Enchantment CLEARER_ENCHANTMENT = registerEnchantment("clearer_enchantment", new ClearerEnchantment());
+
     public static Enchantment registerEnchantment(String name, Enchantment enchantment) {
         return Registry.register(Registries.ENCHANTMENT, new Identifier(EpicMCMod.MOD_ID, name), enchantment);
     }
