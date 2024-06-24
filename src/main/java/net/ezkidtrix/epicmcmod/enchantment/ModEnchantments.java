@@ -2,6 +2,7 @@ package net.ezkidtrix.epicmcmod.enchantment;
 
 import net.ezkidtrix.epicmcmod.EpicMCMod;
 import net.minecraft.enchantment.Enchantment;
+import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;

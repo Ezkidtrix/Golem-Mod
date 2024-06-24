@@ -1,6 +1,7 @@
 package net.ezkidtrix.epicmcmod;
 
 import net.ezkidtrix.epicmcmod.block.ModBlocks;
+import net.ezkidtrix.epicmcmod.command.CustomEnchantCommand;
 import net.ezkidtrix.epicmcmod.enchantment.Listener;
 import net.ezkidtrix.epicmcmod.enchantment.ModEnchantments;
 import net.ezkidtrix.epicmcmod.entity.ModEntities;
@@ -15,6 +16,7 @@ import net.ezkidtrix.epicmcmod.villager.ModVillagers;
 import net.ezkidtrix.epicmcmod.world.gen.ModWorldGeneration;
 import net.fabricmc.api.ModInitializer;
 
+import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
 import net.kyrptonaught.customportalapi.api.CustomPortalBuilder;
 import net.minecraft.util.Identifier;
@@ -45,6 +47,10 @@ public class EpicMCMod implements ModInitializer {
 		FabricDefaultAttributeRegistry.register(ModEntities.IceMiniGolem, IceMiniGolemEntity.createIceMiniGolemAttributes());
 
 		FabricDefaultAttributeRegistry.register(ModEntities.MiniCreeper, MiniCreeperEntity.createMiniCreeperAttributes());
+
+		CommandRegistrationCallback.EVENT.register(((dispatcher, registryAccess, environment) -> {
+			CustomEnchantCommand.register(dispatcher, registryAccess);
+		}));
 
 		CustomPortalBuilder.beginPortal()
 				.frameBlock(ModBlocks.GOLEM_BLOCK)
