@@ -57,6 +57,8 @@ public class MiniCreeperEntity extends CreeperEntity implements SkinOverlayOwner
 
         if (Math.random() < 0.002) {
             dropStack(EnchantedBookItem.forEnchantment(new EnchantmentLevelEntry(ModEnchantments.CHUNKER_ENCHANTMENT, 1)));
+        } else if (Math.random() < 0.01) {
+            dropStack(EnchantedBookItem.forEnchantment(new EnchantmentLevelEntry(ModEnchantments.CLEARER_ENCHANTMENT, 1)));
         }
     }
 
