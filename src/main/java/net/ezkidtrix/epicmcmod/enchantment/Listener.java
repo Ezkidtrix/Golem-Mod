@@ -90,7 +90,7 @@ public class Listener {
     }
 
     public static void checkFlying(PlayerEntity player) {
-        if (player.isFallFlying() && player.getEquippedStack(EquipmentSlot.CHEST).getItem() == Items.ELYTRA && hasEnchantment(ModEnchantments.CLEARER_ENCHANTMENT, player)) {
+        if (player.isFallFlying() && player.getEquippedStack(EquipmentSlot.CHEST).getItem() == Items.ELYTRA && hasClearerEnchantment(ModEnchantments.CLEARER_ENCHANTMENT, player)) {
             int radius = 8;
 
             BlockPos pos = player.getBlockPos();
@@ -111,6 +111,10 @@ public class Listener {
                 }
             }
         }
+    }
+
+    private static boolean hasClearerEnchantment(Enchantment enchant, PlayerEntity player) {
+        return EnchantmentHelper.getLevel(enchant, player.getEquippedStack(EquipmentSlot.CHEST)) > 0;
     }
 
     public static boolean hasEnchantment(Enchantment enchant, PlayerEntity player) {
