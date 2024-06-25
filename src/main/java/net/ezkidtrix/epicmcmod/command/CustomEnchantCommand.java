@@ -19,13 +19,11 @@ import net.minecraft.registry.Registries;
 import net.minecraft.server.command.CommandManager;
 import net.minecraft.server.command.ServerCommandSource;
 import net.minecraft.text.Text;
+import net.minecraft.util.Hand;
 import net.minecraft.util.Identifier;
 
 import java.util.*;
 import java.util.concurrent.CompletableFuture;
-
-import static com.mojang.brigadier.builder.LiteralArgumentBuilder.literal;
-import static com.mojang.brigadier.builder.RequiredArgumentBuilder.argument;
 
 public class CustomEnchantCommand {
     private static final Map<String, Enchantment> CUSTOM_ENCHANTMENTS = new HashMap<>();
@@ -63,27 +61,27 @@ public class CustomEnchantCommand {
 
     public static int execute(CommandContext<ServerCommandSource> context, String enchantmentId, int level) {
         ServerCommandSource source = context.getSource();
-        Optional<Enchantment> enchantment = Registries.ENCHANTMENT.getOrEmpty(new Identifier(EpicMCMod.MOD_ID, enchantmentId.toLowerCase() + "_enchantment"));
+        Enchantment enchantment = Registries.ENCHANTMENT.get(new Identifier(EpicMCMod.MOD_ID, enchantmentId.toLowerCase() + "_enchantment"));
 
-        if (enchantment.isEmpty()) {
+        if (enchantment == null) {
             source.sendFeedback(() -> Text.literal("Invalid enchantment ID!"), false);
             return 0;
         }
 
-        ItemStack itemStack = source.getPlayer().getMainHandStack();
+        ItemStack itemStack = Objects.requireNonNull(source.getPlayer()).getMainHandStack();
 
         if (itemStack.isEmpty()) {
             source.sendFeedback(() -> Text.literal("You must be holding an item to enchant!"), false);
             return 0;
         }
 
-        if (!itemStack.canBeEnchantedWith(enchantment.get(), EnchantingContext.ENCHANT_COMMAND)) {
+        if (!itemStack.canBeEnchantedWith(enchantment, EnchantingContext.ENCHANT_COMMAND)) {
             source.sendFeedback(() -> Text.literal("You must be holding an item compatible with that enchantment!"), false);
             return 0;
         }
 
-        itemStack.addEnchantment(enchantment.get(), level);
-        source.sendFeedback(() -> Text.literal("Enchanted item with " + enchantment.get().getName(level).getString()), true);
+        itemStack.addEnchantment(enchantment, level);
+        source.sendFeedback(() -> Text.literal("Enchanted item with " + enchantment.getName(level).getString()), true);
 
         return 1;
     }
