@@ -81,7 +81,7 @@ public class CustomEnchantCommand {
         }
 
         itemStack.addEnchantment(enchantment, level);
-        source.sendFeedback(() -> Text.literal("Enchanted item with " + enchantment.getName(level).getString()), true);
+        source.sendFeedback(() -> Text.literal("Enchanted item with " + enchantment.getName(level).getString()), false);
 
         return 1;
     }
