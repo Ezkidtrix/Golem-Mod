@@ -5,7 +5,9 @@ import net.ezkidtrix.epicmcmod.entity.client.*;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityModelLayerRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
-import net.minecraft.client.gui.screen.ingame.HandledScreens;
+import net.minecraft.client.render.entity.FlyingItemEntityRenderer;
+import net.minecraft.entity.FlyingItemEntity;
+import net.minecraft.entity.mob.FlyingEntity;
 
 public class EpicMCModClient implements ClientModInitializer {
     @Override
@@ -18,5 +20,7 @@ public class EpicMCModClient implements ClientModInitializer {
 
         EntityRendererRegistry.register(ModEntities.MiniCreeper, MiniCreeperRenderer::new);
         EntityModelLayerRegistry.registerModelLayer(ModModelLayers.MiniCreeper, MiniCreeperModel::getTexturedModelData);
+
+        EntityRendererRegistry.register(ModEntities.THROWABLE_ANVIL, FlyingItemEntityRenderer::new);
     }
 }

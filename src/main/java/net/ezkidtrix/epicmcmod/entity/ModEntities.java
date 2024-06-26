@@ -4,6 +4,7 @@ import net.ezkidtrix.epicmcmod.EpicMCMod;
 import net.ezkidtrix.epicmcmod.entity.custom.IceMiniGolemEntity;
 import net.ezkidtrix.epicmcmod.entity.custom.MiniCreeperEntity;
 import net.ezkidtrix.epicmcmod.entity.custom.MiniGolemEntity;
+import net.ezkidtrix.epicmcmod.entity.custom.ThrowableAnvilEntity;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricEntityTypeBuilder;
 import net.minecraft.entity.EntityDimensions;
 import net.minecraft.entity.EntityType;
@@ -24,4 +25,8 @@ public class ModEntities {
     public static final EntityType<MiniCreeperEntity> MiniCreeper = Registry.register(Registries.ENTITY_TYPE,
             new Identifier(EpicMCMod.MOD_ID, "mini_creeper"), FabricEntityTypeBuilder.create(SpawnGroup.CREATURE, MiniCreeperEntity::new)
                     .dimensions(EntityDimensions.fixed(1f, 1f)).build());
+
+    public static final EntityType<ThrowableAnvilEntity> THROWABLE_ANVIL = Registry.register(Registries.ENTITY_TYPE,
+            new Identifier(EpicMCMod.MOD_ID, "throwable_anvil"), FabricEntityTypeBuilder.<ThrowableAnvilEntity>create(SpawnGroup.MISC, ThrowableAnvilEntity::new)
+                    .dimensions(EntityDimensions.fixed(1, 1)).build());
 }

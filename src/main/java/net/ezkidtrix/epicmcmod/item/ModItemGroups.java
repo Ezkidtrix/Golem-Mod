@@ -49,6 +49,8 @@ public class ModItemGroups {
 
                         entries.add(ModItems.ICE_MINI_GOLEM_SPAWN_EGG);
                         entries.add(ModItems.MINI_CREEPER_SPAWN_EGG);
+
+                        entries.add(ModItems.THROWABLE_ANVIL);
                     }).build());
 
     public static void registerItemGroups() {

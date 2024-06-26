@@ -2,8 +2,8 @@ package net.ezkidtrix.epicmcmod.item;
 
 import net.ezkidtrix.epicmcmod.EpicMCMod;
 import net.ezkidtrix.epicmcmod.block.ModBlocks;
-import net.ezkidtrix.epicmcmod.enchantment.ModEnchantments;
 import net.ezkidtrix.epicmcmod.entity.ModEntities;
+import net.ezkidtrix.epicmcmod.item.custom.ThrowableAnvilItem;
 import net.ezkidtrix.epicmcmod.sounds.ModSounds;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.item.*;
@@ -32,6 +32,8 @@ public class ModItems {
 
     public static final Item GOLEM_SEEDS = registerItem("golem_seeds", new AliasedBlockItem(ModBlocks.GOLEM_CROP, new FabricItemSettings()));
     public static final Item GOLEM_MUSIC_DISC = registerItem("golem_music_disc", new MusicDiscItem(15, ModSounds.GOLEM_MUSIC, new FabricItemSettings().maxCount(1), 30));
+
+    public static final Item THROWABLE_ANVIL = registerItem("throwable_anvil", new ThrowableAnvilItem(new FabricItemSettings()));
 
     private static Item registerItem(String name, Item item) {
         return Registry.register(Registries.ITEM, new Identifier(EpicMCMod.MOD_ID, name), item);

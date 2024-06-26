@@ -27,8 +27,6 @@ public class EpicMCMod implements ModInitializer {
 	public static final String MOD_ID = "golem-mod";
     public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
 
-
-
 	@Override
 	public void onInitialize() {
 		ModWorldGeneration.generateModWorldGen();

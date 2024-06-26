@@ -57,5 +57,7 @@
   "entity.minecraft.villager.golem_master": "Golem Scammer",
 
   "enchantment.golem-mod.clearer_enchantment": "Clearer",
-  "item.golem-mod.clearer_enchanted_book": "Clearer Enchanted Book"
+  "item.golem-mod.clearer_enchanted_book": "Clearer Enchanted Book",
+
+  "item.golem-mod.throwable_anvil": "Throwable Anvil"
 }
