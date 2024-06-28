@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "golem-mod:block/deepslate_golem_ore"
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "#": {
+      "item": "golem-mod:golem_block"
+    }
+  },
+  "pattern": [
+    " ##",
+    " ##",
+    " ##"
+  ],
+  "result": {
+    "count": 1,
+    "id": "golem-mod:golem_door"
+  }
+}

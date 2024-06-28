@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "powered=false": {
+      "model": "golem-mod:block/golem_pressure_plate"
+    },
+    "powered=true": {
+      "model": "golem-mod:block/golem_pressure_plate_down"
+    }
+  }
+}

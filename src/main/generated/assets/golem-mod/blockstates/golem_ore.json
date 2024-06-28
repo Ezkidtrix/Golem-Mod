@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "golem-mod:block/golem_ore"
+    }
+  }
+}
