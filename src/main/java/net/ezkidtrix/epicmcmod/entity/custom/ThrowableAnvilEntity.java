@@ -9,6 +9,7 @@ import net.minecraft.item.Item;
 import net.minecraft.network.listener.ClientPlayPacketListener;
 import net.minecraft.network.packet.Packet;
 import net.minecraft.network.packet.s2c.play.EntitySpawnS2CPacket;
+import net.minecraft.server.network.EntityTrackerEntry;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.world.World;
 
@@ -27,12 +28,12 @@ public class ThrowableAnvilEntity extends ThrownItemEntity {
     }
 
     @Override
-    public Packet<ClientPlayPacketListener> createSpawnPacket() {
-        return new EntitySpawnS2CPacket(this);
+    public Packet<ClientPlayPacketListener> createSpawnPacket(EntityTrackerEntry entityTrackerEntry) {
+        return new EntitySpawnS2CPacket(this, entityTrackerEntry);
     }
 
     @Override
-    protected float getGravity() {
+    protected double getGravity() {
         return 0.015f;
     }
 

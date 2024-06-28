@@ -1,10 +1,7 @@
 package net.ezkidtrix.epicmcmod.entity.custom;
 
-import net.ezkidtrix.epicmcmod.enchantment.GolemEnchantment;
-import net.ezkidtrix.epicmcmod.enchantment.ModEnchantments;
-import net.ezkidtrix.epicmcmod.enchantment.SphererEnchantment;
 import net.minecraft.block.BlockState;
-import net.minecraft.enchantment.EnchantmentLevelEntry;
+import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityStatuses;
 import net.minecraft.entity.EntityType;
@@ -17,11 +14,9 @@ import net.minecraft.entity.data.DataTracker;
 import net.minecraft.entity.data.TrackedData;
 import net.minecraft.entity.data.TrackedDataHandlerRegistry;
 import net.minecraft.entity.mob.*;
-import net.minecraft.entity.passive.AnimalEntity;
 import net.minecraft.entity.passive.IronGolemEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.fluid.Fluids;
-import net.minecraft.item.EnchantedBookItem;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundEvents;
@@ -70,9 +65,9 @@ public class MiniGolemEntity extends IronGolemEntity implements Angerable  {
     }
 
     @Override
-    protected void initDataTracker() {
-        super.initDataTracker();
-        this.dataTracker.startTracking(IRON_GOLEM_FLAGS, (byte)0);
+    protected void initDataTracker(DataTracker.Builder builder) {
+        super.initDataTracker(builder);
+        builder.add(IRON_GOLEM_FLAGS, (byte)0);
     }
 
     @Override
@@ -157,33 +152,35 @@ public class MiniGolemEntity extends IronGolemEntity implements Angerable  {
         this.attackTicksLeft = 10;
         this.getWorld().sendEntityStatus(this, EntityStatuses.PLAY_ATTACK_SOUND);
         float f = this.getAttackDamage();
-        float g = (int)f > 0 ? f / 2.0f + (float)this.random.nextInt((int)f) : f;
-        boolean bl = target.damage(this.getDamageSources().mobAttack(this), g);
+        float g = (int)f > 0 ? f / 2.0F + (float)this.random.nextInt((int)f) : f;
+        DamageSource damageSource = this.getDamageSources().mobAttack(this);
+        boolean bl = target.damage(damageSource, g);
         if (bl) {
-            double d;
+            double var10000;
             if (target instanceof LivingEntity) {
                 LivingEntity livingEntity = (LivingEntity)target;
-                d = livingEntity.getAttributeValue(EntityAttributes.GENERIC_KNOCKBACK_RESISTANCE);
+                var10000 = livingEntity.getAttributeValue(EntityAttributes.GENERIC_KNOCKBACK_RESISTANCE);
             } else {
-                d = 0.0;
+                var10000 = 0.0;
             }
-            double d2 = d;
-            double e = Math.max(0.0, 1.0 - d2);
-            target.setVelocity(target.getVelocity().add(0.0, (double)0.4f * e, 0.0));
-            this.applyDamageEffects(this, target);
+
+            double d = var10000;
+            double e = Math.max(0.0, 1.0 - d);
+            target.setVelocity(target.getVelocity().add(0.0, 0.4000000059604645 * e, 0.0));
+            World var11 = this.getWorld();
+            if (var11 instanceof ServerWorld) {
+                ServerWorld serverWorld = (ServerWorld)var11;
+                EnchantmentHelper.onTargetDamaged(serverWorld, target, damageSource);
+            }
         }
-        this.playSound(SoundEvents.ENTITY_IRON_GOLEM_ATTACK, 1.0f, 1.0f);
+
+        this.playSound(SoundEvents.ENTITY_IRON_GOLEM_ATTACK, 1.0F, 1.0F);
         return bl;
     }
 
     @Override
     public boolean damage(DamageSource source, float amount) {
-        Crack crack = this.getCrack();
-        boolean bl = super.damage(source, amount);
-        if (bl && this.getCrack() != crack) {
-            this.playSound(SoundEvents.ENTITY_IRON_GOLEM_DAMAGE, 1.0f, 1.0f);
-        }
-        return bl;
+        return super.damage(source, amount);
     }
 
     @Override
@@ -234,10 +231,6 @@ public class MiniGolemEntity extends IronGolemEntity implements Angerable  {
     @Override
     public void onDeath(DamageSource damageSource) {
         super.onDeath(damageSource);
-
-        if (Math.random() < 0.001) {
-            dropStack(EnchantedBookItem.forEnchantment(new EnchantmentLevelEntry(ModEnchantments.SPHERER_ENCHANTMENT, (int) (Math.random() * SphererEnchantment.MAX_LEVEL + 1))));
-        }
     }
 
     @Override

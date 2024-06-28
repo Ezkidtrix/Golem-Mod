@@ -34,12 +34,12 @@ public class IceMiniGolemModel<T extends IceMiniGolemEntity> extends EntityModel
 	}
 
 	@Override
-	public void render(MatrixStack matrices, VertexConsumer vertexConsumer, int light, int overlay, float red, float green, float blue, float alpha) {
-		golem.render(matrices, vertexConsumer, light, overlay, red, green, blue, alpha);
+	public void setAngles(T entity, float limbAngle, float limbDistance, float animationProgress, float headYaw, float headPitch) {
+
 	}
 
 	@Override
-	public void setAngles(T entity, float limbAngle, float limbDistance, float animationProgress, float headYaw, float headPitch) {
-
+	public void render(MatrixStack matrices, VertexConsumer vertices, int light, int overlay, int color) {
+		golem.render(matrices, vertices, light, overlay);
 	}
 }

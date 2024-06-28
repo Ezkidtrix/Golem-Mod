@@ -32,13 +32,14 @@ public class MiniGolemModel<T extends MiniGolemEntity> extends EntityModel<T> {
 		ModelPartData left_leg = golem.addChild("left_leg", ModelPartBuilder.create().uv(60, 0).cuboid(-3.5F, 3.0F, -3.0F, 6.0F, 10.0F, 5.0F, new Dilation(0.0F)), ModelTransform.pivot(5.0F, -13.0F, 0.0F));
 		return TexturedModelData.of(modelData, 128, 128);
 	}
-	@Override
-	public void render(MatrixStack matrices, VertexConsumer vertexConsumer, int light, int overlay, float red, float green, float blue, float alpha) {
-		golem.render(matrices, vertexConsumer, light, overlay, red, green, blue, alpha);
-	}
 
 	@Override
 	public void setAngles(T entity, float limbAngle, float limbDistance, float animationProgress, float headYaw, float headPitch) {
 
+	}
+
+	@Override
+	public void render(MatrixStack matrices, VertexConsumer vertices, int light, int overlay, int color) {
+		golem.render(matrices, vertices, light, overlay, color);
 	}
 }

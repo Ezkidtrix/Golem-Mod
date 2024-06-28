@@ -37,13 +37,12 @@ public class ModModelProvider extends FabricModelProvider {
     }
 
     public void generateItemModels(ItemModelGenerator itemModelGenerator) {
-        itemModelGenerator.register(ModItems.MINI_GOLEM_SPAWN_EGG, new Model(Optional.of(new Identifier("item/template_spawn_egg")), Optional.empty()));
-        itemModelGenerator.register(ModItems.ICE_MINI_GOLEM_SPAWN_EGG, new Model(Optional.of(new Identifier("item/template_spawn_egg")), Optional.empty()));
+        itemModelGenerator.register(ModItems.MINI_GOLEM_SPAWN_EGG, new Model(Optional.of(Identifier.of("item/template_spawn_egg")), Optional.empty()));
+        itemModelGenerator.register(ModItems.ICE_MINI_GOLEM_SPAWN_EGG, new Model(Optional.of(Identifier.of("item/template_spawn_egg")), Optional.empty()));
 
-        itemModelGenerator.register(ModItems.MINI_CREEPER_SPAWN_EGG, new Model(Optional.of(new Identifier("item/template_spawn_egg")), Optional.empty()));
+        itemModelGenerator.register(ModItems.MINI_CREEPER_SPAWN_EGG, new Model(Optional.of(Identifier.of("item/template_spawn_egg")), Optional.empty()));
 
         itemModelGenerator.register(ModItems.GOLEM_INGOT, Models.GENERATED);
-        itemModelGenerator.register(ModItems.GOLEM_MUSIC_DISC, Models.GENERATED);
 
         itemModelGenerator.register(ModItems.GOLEM_SWORD, Models.HANDHELD);
         itemModelGenerator.register(ModItems.GOLEM_PICKAXE, Models.HANDHELD);
@@ -56,6 +55,6 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.registerArmor((ArmorItem) ModItems.GOLEM_LEGGINGS);
         itemModelGenerator.registerArmor((ArmorItem) ModItems.GOLEM_BOOTS);
 
-        itemModelGenerator.register(ModItems.THROWABLE_ANVIL, new Model(Optional.of(new Identifier("block/anvil")), Optional.empty()));
+        itemModelGenerator.register(ModItems.THROWABLE_ANVIL, new Model(Optional.of(Identifier.of("block/anvil")), Optional.empty()));
     }
 }

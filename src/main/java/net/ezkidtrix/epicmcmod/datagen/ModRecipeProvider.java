@@ -9,11 +9,14 @@ import net.minecraft.data.server.recipe.ShapedRecipeJsonBuilder;
 import net.minecraft.item.Items;
 import net.minecraft.recipe.Ingredient;
 import net.minecraft.recipe.book.RecipeCategory;
+import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.util.Identifier;
 
+import java.util.concurrent.CompletableFuture;
+
 public class ModRecipeProvider extends FabricRecipeProvider {
-    public ModRecipeProvider(FabricDataOutput output) {
-        super(output);
+    public ModRecipeProvider(FabricDataOutput output, CompletableFuture<RegistryWrapper.WrapperLookup> future) {
+        super(output, future);
     }
 
     @Override
@@ -28,7 +31,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .input('S', Items.STICK)
                 .criterion(hasItem(ModItems.GOLEM_INGOT), conditionsFromItem(ModItems.GOLEM_INGOT))
                 .criterion(hasItem(Items.STICK), conditionsFromItem(Items.STICK))
-                .offerTo(exporter, new Identifier(getRecipeName(ModItems.GOLEM_SWORD)));
+                .offerTo(exporter, Identifier.of(getRecipeName(ModItems.GOLEM_SWORD)));
 
         ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, ModItems.GOLEM_PICKAXE, 1)
                 .pattern("###")
@@ -38,7 +41,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .input('S', Items.STICK)
                 .criterion(hasItem(ModItems.GOLEM_INGOT), conditionsFromItem(ModItems.GOLEM_INGOT))
                 .criterion(hasItem(Items.STICK), conditionsFromItem(Items.STICK))
-                .offerTo(exporter, new Identifier(getRecipeName(ModItems.GOLEM_PICKAXE)));
+                .offerTo(exporter, Identifier.of(getRecipeName(ModItems.GOLEM_PICKAXE)));
 
         ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, ModItems.GOLEM_AXE, 1)
                 .pattern(" ##")
@@ -48,7 +51,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .input('S', Items.STICK)
                 .criterion(hasItem(ModItems.GOLEM_INGOT), conditionsFromItem(ModItems.GOLEM_INGOT))
                 .criterion(hasItem(Items.STICK), conditionsFromItem(Items.STICK))
-                .offerTo(exporter, new Identifier(getRecipeName(ModItems.GOLEM_AXE)));
+                .offerTo(exporter, Identifier.of(getRecipeName(ModItems.GOLEM_AXE)));
 
         ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, ModItems.GOLEM_SHOVEL, 1)
                 .pattern(" # ")
@@ -58,7 +61,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .input('S', Items.STICK)
                 .criterion(hasItem(ModItems.GOLEM_INGOT), conditionsFromItem(ModItems.GOLEM_INGOT))
                 .criterion(hasItem(Items.STICK), conditionsFromItem(Items.STICK))
-                .offerTo(exporter, new Identifier(getRecipeName(ModItems.GOLEM_SHOVEL)));
+                .offerTo(exporter, Identifier.of(getRecipeName(ModItems.GOLEM_SHOVEL)));
 
         ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, ModItems.GOLEM_HOE, 1)
                 .pattern(" ##")
@@ -68,7 +71,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .input('S', Items.STICK)
                 .criterion(hasItem(ModItems.GOLEM_INGOT), conditionsFromItem(ModItems.GOLEM_INGOT))
                 .criterion(hasItem(Items.STICK), conditionsFromItem(Items.STICK))
-                .offerTo(exporter, new Identifier(getRecipeName(ModItems.GOLEM_HOE)));
+                .offerTo(exporter, Identifier.of(getRecipeName(ModItems.GOLEM_HOE)));
 
         ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, ModItems.GOLEM_HELMET, 1)
                 .pattern("###")
@@ -76,7 +79,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .pattern("   ")
                 .input('#', ModItems.GOLEM_INGOT)
                 .criterion(hasItem(ModItems.GOLEM_INGOT), conditionsFromItem(ModItems.GOLEM_INGOT))
-                .offerTo(exporter, new Identifier(getRecipeName(ModItems.GOLEM_HELMET)));
+                .offerTo(exporter, Identifier.of(getRecipeName(ModItems.GOLEM_HELMET)));
 
         ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, ModItems.GOLEM_CHESTPLATE, 1)
                 .pattern("# #")
@@ -84,7 +87,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .pattern("###")
                 .input('#', ModItems.GOLEM_INGOT)
                 .criterion(hasItem(ModItems.GOLEM_INGOT), conditionsFromItem(ModItems.GOLEM_INGOT))
-                .offerTo(exporter, new Identifier(getRecipeName(ModItems.GOLEM_CHESTPLATE)));
+                .offerTo(exporter, Identifier.of(getRecipeName(ModItems.GOLEM_CHESTPLATE)));
 
         ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, ModItems.GOLEM_LEGGINGS, 1)
                 .pattern("###")
@@ -92,7 +95,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .pattern("# #")
                 .input('#', ModItems.GOLEM_INGOT)
                 .criterion(hasItem(ModItems.GOLEM_INGOT), conditionsFromItem(ModItems.GOLEM_INGOT))
-                .offerTo(exporter, new Identifier(getRecipeName(ModItems.GOLEM_LEGGINGS)));
+                .offerTo(exporter, Identifier.of(getRecipeName(ModItems.GOLEM_LEGGINGS)));
 
         ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, ModItems.GOLEM_BOOTS, 1)
                 .pattern("   ")
@@ -100,7 +103,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .pattern("# #")
                 .input('#', ModItems.GOLEM_INGOT)
                 .criterion(hasItem(ModItems.GOLEM_INGOT), conditionsFromItem(ModItems.GOLEM_INGOT))
-                .offerTo(exporter, new Identifier(getRecipeName(ModItems.GOLEM_BOOTS)));
+                .offerTo(exporter, Identifier.of(getRecipeName(ModItems.GOLEM_BOOTS)));
 
         ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, ModBlocks.GOLEM_STAIRS, 1)
                 .pattern("#  ")
@@ -108,7 +111,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .pattern("###")
                 .input('#', ModBlocks.GOLEM_BLOCK)
                 .criterion(hasItem(ModBlocks.GOLEM_BLOCK), conditionsFromItem(ModBlocks.GOLEM_BLOCK))
-                .offerTo(exporter, new Identifier(getRecipeName(ModBlocks.GOLEM_STAIRS)));
+                .offerTo(exporter, Identifier.of(getRecipeName(ModBlocks.GOLEM_STAIRS)));
 
         ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, ModBlocks.GOLEM_SLAB, 1)
                 .pattern("   ")
@@ -116,7 +119,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .pattern("   ")
                 .input('#', ModBlocks.GOLEM_BLOCK)
                 .criterion(hasItem(ModBlocks.GOLEM_BLOCK), conditionsFromItem(ModBlocks.GOLEM_BLOCK))
-                .offerTo(exporter, new Identifier(getRecipeName(ModBlocks.GOLEM_SLAB)));
+                .offerTo(exporter, Identifier.of(getRecipeName(ModBlocks.GOLEM_SLAB)));
 
         ShapedRecipeJsonBuilder.create(RecipeCategory.REDSTONE, ModBlocks.GOLEM_PRESSURE_PLATE, 1)
                 .pattern("   ")
@@ -124,7 +127,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .pattern("   ")
                 .input('#', ModBlocks.GOLEM_BLOCK)
                 .criterion(hasItem(ModBlocks.GOLEM_BLOCK), conditionsFromItem(ModBlocks.GOLEM_BLOCK))
-                .offerTo(exporter, new Identifier(getRecipeName(ModBlocks.GOLEM_PRESSURE_PLATE)));
+                .offerTo(exporter, Identifier.of(getRecipeName(ModBlocks.GOLEM_PRESSURE_PLATE)));
 
         ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, ModBlocks.GOLEM_FENCE, 1)
                 .pattern("#S#")
@@ -134,7 +137,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .input('S', Items.STICK)
                 .criterion(hasItem(ModBlocks.GOLEM_BLOCK), conditionsFromItem(ModBlocks.GOLEM_BLOCK))
                 .criterion(hasItem(Items.STICK), conditionsFromItem(Items.STICK))
-                .offerTo(exporter, new Identifier(getRecipeName(ModBlocks.GOLEM_FENCE)));
+                .offerTo(exporter, Identifier.of(getRecipeName(ModBlocks.GOLEM_FENCE)));
 
         ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, ModBlocks.GOLEM_FENCE_GATE, 1)
                 .pattern("S#S")
@@ -144,7 +147,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .input('S', Items.STICK)
                 .criterion(hasItem(ModBlocks.GOLEM_BLOCK), conditionsFromItem(ModBlocks.GOLEM_BLOCK))
                 .criterion(hasItem(Items.STICK), conditionsFromItem(Items.STICK))
-                .offerTo(exporter, new Identifier(getRecipeName(ModBlocks.GOLEM_FENCE_GATE)));
+                .offerTo(exporter, Identifier.of(getRecipeName(ModBlocks.GOLEM_FENCE_GATE)));
 
         ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, ModBlocks.GOLEM_DOOR, 1)
                 .pattern(" ##")
@@ -152,7 +155,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .pattern(" ##")
                 .input('#', ModBlocks.GOLEM_BLOCK)
                 .criterion(hasItem(ModBlocks.GOLEM_BLOCK), conditionsFromItem(ModBlocks.GOLEM_BLOCK))
-                .offerTo(exporter, new Identifier(getRecipeName(ModBlocks.GOLEM_DOOR)));
+                .offerTo(exporter, Identifier.of(getRecipeName(ModBlocks.GOLEM_DOOR)));
 
         ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, ModBlocks.GOLEM_TRAPDOOR, 1)
                 .pattern("###")
@@ -160,7 +163,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .pattern("   ")
                 .input('#', ModBlocks.GOLEM_BLOCK)
                 .criterion(hasItem(ModBlocks.GOLEM_BLOCK), conditionsFromItem(ModBlocks.GOLEM_BLOCK))
-                .offerTo(exporter, new Identifier(getRecipeName(ModBlocks.GOLEM_TRAPDOOR)));
+                .offerTo(exporter, Identifier.of(getRecipeName(ModBlocks.GOLEM_TRAPDOOR)));
 
         ShapedRecipeJsonBuilder.create(RecipeCategory.REDSTONE, ModBlocks.GOLEM_BUTTON, 1)
                 .pattern("   ")
@@ -168,7 +171,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .pattern("   ")
                 .input('#', ModBlocks.GOLEM_BLOCK)
                 .criterion(hasItem(ModBlocks.GOLEM_BLOCK), conditionsFromItem(ModBlocks.GOLEM_BLOCK))
-                .offerTo(exporter, new Identifier(getRecipeName(ModBlocks.GOLEM_BUTTON)));
+                .offerTo(exporter, Identifier.of(getRecipeName(ModBlocks.GOLEM_BUTTON)));
 
         ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, ModBlocks.GOLEM_WALL, 1)
                 .pattern("###")
@@ -176,6 +179,6 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .pattern("   ")
                 .input('#', ModBlocks.GOLEM_BLOCK)
                 .criterion(hasItem(ModBlocks.GOLEM_BLOCK), conditionsFromItem(ModBlocks.GOLEM_BLOCK))
-                .offerTo(exporter, new Identifier(getRecipeName(ModBlocks.GOLEM_WALL)));
+                .offerTo(exporter, Identifier.of(getRecipeName(ModBlocks.GOLEM_WALL)));
     }
 }

@@ -1,6 +1,6 @@
 package net.ezkidtrix.epicmcmod.world;
 
-import net.ezkidtrix.epicmcmod.EpicMCMod;
+import net.ezkidtrix.epicmcmod.GolemMod;
 import net.minecraft.registry.Registerable;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
@@ -25,7 +25,7 @@ public class ModPlacedFeatures {
     }
 
     public static RegistryKey<PlacedFeature> registryKey(String name) {
-        return RegistryKey.of(RegistryKeys.PLACED_FEATURE, new Identifier(EpicMCMod.MOD_ID, name));
+        return RegistryKey.of(RegistryKeys.PLACED_FEATURE, Identifier.of(GolemMod.MOD_ID, name));
     }
 
     public static void register(Registerable<PlacedFeature> context, RegistryKey<PlacedFeature> key, RegistryEntry<ConfiguredFeature<?, ?>> configuration, List<PlacementModifier> modifiers) {

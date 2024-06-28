@@ -1,23 +1,27 @@
 package net.ezkidtrix.epicmcmod.item;
 
-import net.fabricmc.yarn.constants.MiningLevels;
+import net.ezkidtrix.epicmcmod.GolemMod;
+import net.ezkidtrix.epicmcmod.block.ModBlocks;
+import net.minecraft.block.Block;
 import net.minecraft.item.ToolMaterial;
 import net.minecraft.recipe.Ingredient;
+import net.minecraft.registry.RegistryKey;
+import net.minecraft.registry.RegistryKeys;
+import net.minecraft.registry.tag.TagKey;
+import net.minecraft.util.Identifier;
 
 import java.util.function.Supplier;
 
 public enum ModToolMaterial implements ToolMaterial {
-    GOLEM(3, 10000, 100f, 3f, 50, () -> Ingredient.ofItems(ModItems.GOLEM_INGOT));
+    GOLEM(10000, 100f, 3f, 50, () -> Ingredient.ofItems(ModItems.GOLEM_INGOT));
 
-    private final int miningLevel;
     private final int itemDurability;
     private final float miningSpeed;
     private final float attackDamage;
     private final int enchantAbility;
     private final Supplier<Ingredient> repairIngredient;
 
-    ModToolMaterial(int miningLevel, int itemDurability, float miningSpeed, float attackDamage, int enchantability, Supplier<Ingredient> repairIngredient) {
-        this.miningLevel = miningLevel;
+    ModToolMaterial(int itemDurability, float miningSpeed, float attackDamage, int enchantability, Supplier<Ingredient> repairIngredient) {
         this.itemDurability = itemDurability;
         this.miningSpeed = miningSpeed;
         this.attackDamage = attackDamage;
@@ -42,8 +46,8 @@ public enum ModToolMaterial implements ToolMaterial {
     }
 
     @Override
-    public int getMiningLevel() {
-        return this.miningLevel;
+    public TagKey<Block> getInverseTag() {
+        return TagKey.of(RegistryKeys.BLOCK, Identifier.of(GolemMod.MOD_ID, "golem_block"));
     }
 
     @Override

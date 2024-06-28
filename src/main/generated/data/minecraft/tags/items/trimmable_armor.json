@@ -1,9 +1,0 @@
-{
-  "replace": false,
-  "values": [
-    "golem-mod:golem_helmet",
-    "golem-mod:golem_chestplate",
-    "golem-mod:golem_leggings",
-    "golem-mod:golem_boots"
-  ]
-}

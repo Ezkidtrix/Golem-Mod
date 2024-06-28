@@ -1,6 +1,6 @@
 package net.ezkidtrix.epicmcmod.world;
 
-import net.ezkidtrix.epicmcmod.EpicMCMod;
+import net.ezkidtrix.epicmcmod.GolemMod;
 import net.ezkidtrix.epicmcmod.block.ModBlocks;
 import net.minecraft.registry.Registerable;
 import net.minecraft.registry.RegistryKey;
@@ -29,7 +29,7 @@ public class ModConfiguredFeatures {
     }
 
     public static RegistryKey<ConfiguredFeature<?, ?>> registryKey(String name) {
-        return RegistryKey.of(RegistryKeys.CONFIGURED_FEATURE, new Identifier(EpicMCMod.MOD_ID, name));
+        return RegistryKey.of(RegistryKeys.CONFIGURED_FEATURE, Identifier.of(GolemMod.MOD_ID, name));
     }
 
     public static <FC extends FeatureConfig, F extends Feature<FC>> void register(Registerable<ConfiguredFeature<?, ?>> context, RegistryKey<ConfiguredFeature<?, ?>> key, F feature, FC configuration) {

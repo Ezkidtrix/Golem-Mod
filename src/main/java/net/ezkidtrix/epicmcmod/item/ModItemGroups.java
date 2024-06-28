@@ -1,8 +1,7 @@
 package net.ezkidtrix.epicmcmod.item;
 
-import net.ezkidtrix.epicmcmod.EpicMCMod;
+import net.ezkidtrix.epicmcmod.GolemMod;
 import net.ezkidtrix.epicmcmod.block.ModBlocks;
-import net.ezkidtrix.epicmcmod.enchantment.ModEnchantments;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
@@ -13,7 +12,7 @@ import net.minecraft.util.Identifier;
 
 public class ModItemGroups {
     public static final ItemGroup GOLEM_GROUP = Registry.register(Registries.ITEM_GROUP,
-            new Identifier(EpicMCMod.MOD_ID, "ezkidtrix"),
+            Identifier.of(GolemMod.MOD_ID, "ezkidtrix"),
             FabricItemGroup.builder().displayName(Text.translatable("itemgroup.golemitems"))
                     .icon(() -> new ItemStack(ModItems.GOLEM_INGOT)).entries((displayContext, entries) -> {
                         entries.add(ModItems.GOLEM_INGOT);
@@ -43,8 +42,7 @@ public class ModItemGroups {
                         entries.add(ModBlocks.GOLEM_WALL);
                         entries.add(ModBlocks.GOLEM_DOOR);
                         entries.add(ModBlocks.GOLEM_TRAPDOOR);
-
-                        entries.add(ModItems.GOLEM_MUSIC_DISC);
+                        
                         entries.add(ModItems.MINI_GOLEM_SPAWN_EGG);
 
                         entries.add(ModItems.ICE_MINI_GOLEM_SPAWN_EGG);
@@ -54,6 +52,6 @@ public class ModItemGroups {
                     }).build());
 
     public static void registerItemGroups() {
-        EpicMCMod.LOGGER.info("Registering Mod Groups for " + EpicMCMod.MOD_ID);
+        GolemMod.LOGGER.info("Registering Mod Groups for " + GolemMod.MOD_ID);
     }
 }

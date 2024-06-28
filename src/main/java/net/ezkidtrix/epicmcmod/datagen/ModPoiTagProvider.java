@@ -1,6 +1,6 @@
 package net.ezkidtrix.epicmcmod.datagen;
 
-import net.ezkidtrix.epicmcmod.EpicMCMod;
+import net.ezkidtrix.epicmcmod.GolemMod;
 import net.minecraft.data.DataOutput;
 import net.minecraft.data.server.tag.TagProvider;
 import net.minecraft.registry.Registry;
@@ -21,6 +21,6 @@ public class ModPoiTagProvider extends TagProvider<PointOfInterestType> {
     @Override
     protected void configure(RegistryWrapper.WrapperLookup lookup) {
         this.getOrCreateTagBuilder(PointOfInterestTypeTags.ACQUIRABLE_JOB_SITE)
-                .addOptional(new Identifier(EpicMCMod.MOD_ID, "golem_poi"));
+                .addOptional(Identifier.of(GolemMod.MOD_ID, "golem_poi"));
     }
 }

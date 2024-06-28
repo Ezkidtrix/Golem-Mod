@@ -1,8 +1,5 @@
 package net.ezkidtrix.epicmcmod.entity.custom;
 
-import net.ezkidtrix.epicmcmod.enchantment.ModEnchantments;
-import net.minecraft.client.render.entity.feature.SkinOverlayOwner;
-import net.minecraft.enchantment.EnchantmentLevelEntry;
 import net.minecraft.entity.*;
 import net.minecraft.entity.attribute.DefaultAttributeContainer;
 import net.minecraft.entity.attribute.EntityAttributes;
@@ -15,7 +12,6 @@ import net.minecraft.entity.mob.CreeperEntity;
 import net.minecraft.entity.mob.HostileEntity;
 import net.minecraft.entity.passive.GoatEntity;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.EnchantedBookItem;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.nbt.NbtCompound;
@@ -32,15 +28,16 @@ import net.minecraft.world.event.GameEvent;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.Collection;
+import java.util.Iterator;
 
 public class MiniCreeperEntity extends CreeperEntity implements SkinOverlayOwner {
-    private static final TrackedData<Integer> FUSE_SPEED = DataTracker.registerData(MiniCreeperEntity.class, TrackedDataHandlerRegistry.INTEGER);
-    private static final TrackedData<Boolean> CHARGED = DataTracker.registerData(MiniCreeperEntity.class, TrackedDataHandlerRegistry.BOOLEAN);
-    private static final TrackedData<Boolean> IGNITED = DataTracker.registerData(MiniCreeperEntity.class, TrackedDataHandlerRegistry.BOOLEAN);
+    private static final TrackedData<Integer> FUSE_SPEED;
+    private static final TrackedData<Boolean> CHARGED;
+    private static final TrackedData<Boolean> IGNITED;
     private int lastFuseTime;
     private int currentFuseTime;
     private int fuseTime = 30;
-    private int explosionRadius = 10;
+    private int explosionRadius = 3;
     private int headsDropped;
 
     public MiniCreeperEntity(EntityType<? extends CreeperEntity> entityType, World world) {
@@ -51,71 +48,61 @@ public class MiniCreeperEntity extends CreeperEntity implements SkinOverlayOwner
         return HostileEntity.createHostileAttributes().add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.5);
     }
 
-    @Override
-    public void onDeath(DamageSource damageSource) {
-        super.onDeath(damageSource);
-
-        if (Math.random() < 0.002) {
-            dropStack(EnchantedBookItem.forEnchantment(new EnchantmentLevelEntry(ModEnchantments.CHUNKER_ENCHANTMENT, 1)));
-        } else if (Math.random() < 0.01) {
-            dropStack(EnchantedBookItem.forEnchantment(new EnchantmentLevelEntry(ModEnchantments.CLEARER_ENCHANTMENT, 1)));
-        }
-    }
-
-    @Override
     public boolean handleFallDamage(float fallDistance, float damageMultiplier, DamageSource damageSource) {
         boolean bl = super.handleFallDamage(fallDistance, damageMultiplier, damageSource);
-        this.currentFuseTime += (int)(fallDistance * 1.5f);
+        this.currentFuseTime += (int)(fallDistance * 1.5F);
         if (this.currentFuseTime > this.fuseTime - 5) {
             this.currentFuseTime = this.fuseTime - 5;
         }
+
         return bl;
     }
 
-    @Override
-    protected void initDataTracker() {
-        super.initDataTracker();
-        this.dataTracker.startTracking(FUSE_SPEED, -1);
-        this.dataTracker.startTracking(CHARGED, false);
-        this.dataTracker.startTracking(IGNITED, false);
+    protected void initDataTracker(DataTracker.Builder builder) {
+        super.initDataTracker(builder);
+        builder.add(FUSE_SPEED, -1);
+        builder.add(CHARGED, false);
+        builder.add(IGNITED, false);
     }
 
-    @Override
     public void writeCustomDataToNbt(NbtCompound nbt) {
         super.writeCustomDataToNbt(nbt);
-        if (this.dataTracker.get(CHARGED).booleanValue()) {
+        if ((Boolean)this.dataTracker.get(CHARGED)) {
             nbt.putBoolean("powered", true);
         }
+
         nbt.putShort("Fuse", (short)this.fuseTime);
         nbt.putByte("ExplosionRadius", (byte)this.explosionRadius);
         nbt.putBoolean("ignited", this.isIgnited());
     }
 
-    @Override
     public void readCustomDataFromNbt(NbtCompound nbt) {
         super.readCustomDataFromNbt(nbt);
         this.dataTracker.set(CHARGED, nbt.getBoolean("powered"));
         if (nbt.contains("Fuse", NbtElement.NUMBER_TYPE)) {
             this.fuseTime = nbt.getShort("Fuse");
         }
+
         if (nbt.contains("ExplosionRadius", NbtElement.NUMBER_TYPE)) {
             this.explosionRadius = nbt.getByte("ExplosionRadius");
         }
+
         if (nbt.getBoolean("ignited")) {
             this.ignite();
         }
+
     }
 
-    @Override
     public void tick() {
         if (this.isAlive()) {
-            int i;
             this.lastFuseTime = this.currentFuseTime;
             if (this.isIgnited()) {
                 this.setFuseSpeed(1);
             }
-            if ((i = this.getFuseSpeed()) > 0 && this.currentFuseTime == 0) {
-                this.playSound(SoundEvents.ENTITY_CREEPER_PRIMED, 1.0f, 0.5f);
+
+            int i = this.getFuseSpeed();
+            if (i > 0 && this.currentFuseTime == 0) {
+                this.playSound(SoundEvents.ENTITY_CREEPER_PRIMED, 1.0F, 0.5F);
                 this.emitGameEvent(GameEvent.PRIME_FUSE);
             }
 
@@ -129,31 +116,30 @@ public class MiniCreeperEntity extends CreeperEntity implements SkinOverlayOwner
                 this.explode();
             }
         }
+
         super.tick();
     }
 
-    @Override
     public void setTarget(@Nullable LivingEntity target) {
-        if (target instanceof GoatEntity) {
-            return;
+        if (!(target instanceof GoatEntity)) {
+            super.setTarget(target);
         }
-        super.setTarget(target);
     }
 
-    @Override
-    protected void dropEquipment(DamageSource source, int lootingMultiplier, boolean allowDrops) {
-        CreeperEntity creeperEntity;
-        super.dropEquipment(source, lootingMultiplier, allowDrops);
+    protected void dropEquipment(ServerWorld world, DamageSource source, boolean causedByPlayer) {
+        super.dropEquipment(world, source, causedByPlayer);
         Entity entity = source.getAttacker();
-        if (entity != this && entity instanceof CreeperEntity && (creeperEntity = (CreeperEntity)entity).shouldDropHead()) {
-            creeperEntity.onHeadDropped();
-            this.dropItem(Items.CREEPER_HEAD);
+        if (entity != this && entity instanceof CreeperEntity creeperEntity) {
+            if (creeperEntity.shouldDropHead()) {
+                creeperEntity.onHeadDropped();
+                this.dropItem(Items.CREEPER_HEAD);
+            }
         }
+
     }
 
-    @Override
     public boolean shouldRenderOverlay() {
-        return this.dataTracker.get(CHARGED);
+        return (Boolean)this.dataTracker.get(CHARGED);
     }
 
     public float getClientFuseTime(float timeDelta) {
@@ -161,66 +147,73 @@ public class MiniCreeperEntity extends CreeperEntity implements SkinOverlayOwner
     }
 
     public int getFuseSpeed() {
-        return this.dataTracker.get(FUSE_SPEED);
+        return (Integer)this.dataTracker.get(FUSE_SPEED);
     }
 
     public void setFuseSpeed(int fuseSpeed) {
         this.dataTracker.set(FUSE_SPEED, fuseSpeed);
     }
 
-    @Override
     public void onStruckByLightning(ServerWorld world, LightningEntity lightning) {
         super.onStruckByLightning(world, lightning);
         this.dataTracker.set(CHARGED, true);
     }
 
-    @Override
     protected ActionResult interactMob(PlayerEntity player, Hand hand) {
         ItemStack itemStack = player.getStackInHand(hand);
         if (itemStack.isIn(ItemTags.CREEPER_IGNITERS)) {
             SoundEvent soundEvent = itemStack.isOf(Items.FIRE_CHARGE) ? SoundEvents.ITEM_FIRECHARGE_USE : SoundEvents.ITEM_FLINTANDSTEEL_USE;
-            this.getWorld().playSound(player, this.getX(), this.getY(), this.getZ(), soundEvent, this.getSoundCategory(), 1.0f, this.random.nextFloat() * 0.4f + 0.8f);
+            this.getWorld().playSound(player, this.getX(), this.getY(), this.getZ(), soundEvent, this.getSoundCategory(), 1.0F, this.random.nextFloat() * 0.4F + 0.8F);
             if (!this.getWorld().isClient) {
                 this.ignite();
                 if (!itemStack.isDamageable()) {
                     itemStack.decrement(1);
                 } else {
-                    itemStack.damage(1, player, playerx -> playerx.sendToolBreakStatus(hand));
+                    itemStack.damage(1, player, getSlotForHand(hand));
                 }
             }
+
             return ActionResult.success(this.getWorld().isClient);
+        } else {
+            return super.interactMob(player, hand);
         }
-        return super.interactMob(player, hand);
     }
 
     private void explode() {
         if (!this.getWorld().isClient) {
-            float f = this.shouldRenderOverlay() ? 2.0f : 1.0f;
+            float f = this.shouldRenderOverlay() ? 2.0F : 1.0F;
             this.dead = true;
             this.getWorld().createExplosion(this, this.getX(), this.getY(), this.getZ(), (float)this.explosionRadius * f, World.ExplosionSourceType.MOB);
-            this.discard();
             this.spawnEffectsCloud();
+            this.onRemoval(Entity.RemovalReason.KILLED);
+            this.discard();
         }
+
     }
 
     private void spawnEffectsCloud() {
         Collection<StatusEffectInstance> collection = this.getStatusEffects();
         if (!collection.isEmpty()) {
             AreaEffectCloudEntity areaEffectCloudEntity = new AreaEffectCloudEntity(this.getWorld(), this.getX(), this.getY(), this.getZ());
-            areaEffectCloudEntity.setRadius(2.5f);
-            areaEffectCloudEntity.setRadiusOnUse(-0.5f);
+            areaEffectCloudEntity.setRadius(2.5F);
+            areaEffectCloudEntity.setRadiusOnUse(-0.5F);
             areaEffectCloudEntity.setWaitTime(10);
             areaEffectCloudEntity.setDuration(areaEffectCloudEntity.getDuration() / 2);
             areaEffectCloudEntity.setRadiusGrowth(-areaEffectCloudEntity.getRadius() / (float)areaEffectCloudEntity.getDuration());
-            for (StatusEffectInstance statusEffectInstance : collection) {
+            Iterator var3 = collection.iterator();
+
+            while(var3.hasNext()) {
+                StatusEffectInstance statusEffectInstance = (StatusEffectInstance)var3.next();
                 areaEffectCloudEntity.addEffect(new StatusEffectInstance(statusEffectInstance));
             }
+
             this.getWorld().spawnEntity(areaEffectCloudEntity);
         }
+
     }
 
     public boolean isIgnited() {
-        return this.dataTracker.get(IGNITED);
+        return (Boolean)this.dataTracker.get(IGNITED);
     }
 
     public void ignite() {
@@ -233,5 +226,11 @@ public class MiniCreeperEntity extends CreeperEntity implements SkinOverlayOwner
 
     public void onHeadDropped() {
         ++this.headsDropped;
+    }
+
+    static {
+        FUSE_SPEED = DataTracker.registerData(MiniCreeperEntity.class, TrackedDataHandlerRegistry.INTEGER);
+        CHARGED = DataTracker.registerData(MiniCreeperEntity.class, TrackedDataHandlerRegistry.BOOLEAN);
+        IGNITED = DataTracker.registerData(MiniCreeperEntity.class, TrackedDataHandlerRegistry.BOOLEAN);
     }
 }

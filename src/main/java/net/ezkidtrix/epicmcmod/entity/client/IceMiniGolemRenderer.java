@@ -1,6 +1,6 @@
 package net.ezkidtrix.epicmcmod.entity.client;
 
-import net.ezkidtrix.epicmcmod.EpicMCMod;
+import net.ezkidtrix.epicmcmod.GolemMod;
 import net.ezkidtrix.epicmcmod.entity.custom.IceMiniGolemEntity;
 import net.minecraft.client.render.VertexConsumerProvider;
 import net.minecraft.client.render.entity.EntityRendererFactory;
@@ -9,7 +9,7 @@ import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.util.Identifier;
 
 public class IceMiniGolemRenderer extends MobEntityRenderer<IceMiniGolemEntity, IceMiniGolemModel<IceMiniGolemEntity>> {
-    private static final Identifier TEXTURE = new Identifier(EpicMCMod.MOD_ID, "textures/entity/ice_mini_golem.png");
+    private static final Identifier TEXTURE = Identifier.of(GolemMod.MOD_ID, "textures/entity/ice_mini_golem.png");
 
     public IceMiniGolemRenderer(EntityRendererFactory.Context context) {
         super(context, new IceMiniGolemModel<>(context.getPart(ModModelLayers.IceMiniGolem)), 0.6f);

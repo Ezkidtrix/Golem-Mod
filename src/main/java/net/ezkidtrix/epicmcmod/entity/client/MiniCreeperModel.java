@@ -7,9 +7,6 @@ import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.mob.CreeperEntity;
 
-// Made with Blockbench 4.10.3
-// Exported for Minecraft version 1.17+ for Yarn
-// Paste this class into your mod and generate all required imports
 public class MiniCreeperModel<T extends CreeperEntity> extends EntityModel<T> {
 	private final ModelPart head;
 	private final ModelPart body;
@@ -44,17 +41,17 @@ public class MiniCreeperModel<T extends CreeperEntity> extends EntityModel<T> {
 	}
 
 	@Override
-	public void render(MatrixStack matrices, VertexConsumer vertexConsumer, int light, int overlay, float red, float green, float blue, float alpha) {
-		head.render(matrices, vertexConsumer, light, overlay, red, green, blue, alpha);
-		body.render(matrices, vertexConsumer, light, overlay, red, green, blue, alpha);
-		leg1.render(matrices, vertexConsumer, light, overlay, red, green, blue, alpha);
-		leg2.render(matrices, vertexConsumer, light, overlay, red, green, blue, alpha);
-		leg3.render(matrices, vertexConsumer, light, overlay, red, green, blue, alpha);
-		leg4.render(matrices, vertexConsumer, light, overlay, red, green, blue, alpha);
+	public void setAngles(T entity, float limbAngle, float limbDistance, float animationProgress, float headYaw, float headPitch) {
+
 	}
 
 	@Override
-	public void setAngles(T entity, float limbAngle, float limbDistance, float animationProgress, float headYaw, float headPitch) {
-
+	public void render(MatrixStack matrices, VertexConsumer vertices, int light, int overlay, int color) {
+		head.render(matrices, vertices, light, overlay);
+		body.render(matrices, vertices, light, overlay);
+		leg1.render(matrices, vertices, light, overlay);
+		leg2.render(matrices, vertices, light, overlay);
+		leg3.render(matrices, vertices, light, overlay);
+		leg4.render(matrices, vertices, light, overlay);
 	}
 }

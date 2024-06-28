@@ -1,7 +1,7 @@
 {
 	"schemaVersion": 1,
 	"id": "golem-mod",
-	"version": "1.5",
+	"version": "1.6",
 	"name": "Golem Mod",
 	"description": "Ezkidtrix's Golem Mod :)",
 	"authors": [
@@ -14,13 +14,13 @@
 	"environment": "*",
 	"entrypoints": {
 		"main": [
-			"net.ezkidtrix.epicmcmod.EpicMCMod"
+			"net.ezkidtrix.epicmcmod.GolemMod"
 		],
 		"client": [
-			"net.ezkidtrix.epicmcmod.EpicMCModClient"
+			"net.ezkidtrix.epicmcmod.GolemModClient"
 		],
 		"fabric-datagen": [
-			"net.ezkidtrix.epicmcmod.EpicMCModDataGenerator"
+			"net.ezkidtrix.epicmcmod.GolemModDataGenerator"
 		]
 	},
 	"mixins": [
@@ -28,8 +28,8 @@
 	],
 	"depends": {
 		"fabricloader": ">=0.15.11",
-		"minecraft": "~1.20.4",
-		"java": ">=17",
+		"minecraft": "~1.21",
+		"java": ">=21",
 		"fabric-api": "*"
 	},
 	"suggests": {
