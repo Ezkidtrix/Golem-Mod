@@ -42,22 +42,9 @@
   "item.golem-mod.golem_music_disc": "Golem Music Disc",
   "item.golem-mod.golem_music_disc.desc": "Ezkidtrix - Golem Music",
 
-  "item.golem-mod.golem_enchanted_book": "Golem Enchanted Book",
-  "enchantment.golem-mod.golem_enchantment": "Golem",
-
   "item.golem-mod.mini_creeper_spawn_egg": "Mini Creeper Spawn Egg",
   "entity.golem-mod.mini_creeper": "Mini Creeper",
 
-  "enchantment.golem-mod.chunker_enchantment": "Chunker",
-  "item.golem-mod.chunker_enchanted_book": "Chunker Enchanted Book",
-
-  "enchantment.golem-mod.spherer_enchantment": "Spherer",
-  "item.golem-mod.spherer_enchanted_book": "Spherer Enchanted Book",
-
-  "entity.minecraft.villager.golem_master": "Golem Scammer",
-
-  "enchantment.golem-mod.clearer_enchantment": "Clearer",
-  "item.golem-mod.clearer_enchanted_book": "Clearer Enchanted Book",
-
-  "item.golem-mod.throwable_anvil": "Throwable Anvil"
+  "item.golem-mod.throwable_anvil": "Throwable Anvil",
+  "item.golem-mod.golem_staff": "Golem Staff"
 }

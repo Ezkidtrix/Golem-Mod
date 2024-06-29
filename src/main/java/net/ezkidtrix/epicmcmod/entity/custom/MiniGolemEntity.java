@@ -1,5 +1,6 @@
 package net.ezkidtrix.epicmcmod.entity.custom;
 
+import net.ezkidtrix.epicmcmod.item.ModItems;
 import net.minecraft.block.BlockState;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.Entity;
@@ -231,6 +232,10 @@ public class MiniGolemEntity extends IronGolemEntity implements Angerable  {
     @Override
     public void onDeath(DamageSource damageSource) {
         super.onDeath(damageSource);
+
+        if (Math.random() < 0.01) {
+            super.dropItem(ModItems.GOLEM_STAFF);
+        }
     }
 
     @Override
