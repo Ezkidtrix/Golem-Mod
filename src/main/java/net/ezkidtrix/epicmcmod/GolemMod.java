@@ -41,6 +41,6 @@ public class GolemMod implements ModInitializer {
 
 		FabricDefaultAttributeRegistry.register(ModEntities.MiniCreeper, MiniCreeperEntity.createMiniCreeperAttributes());
 
-		AttackEntityCallback.EVENT.register(GolemStaffListener::executeAction);
+		AttackEntityCallback.EVENT.register(GolemStaffListener::executeLeftClickAction);
 	}
 }

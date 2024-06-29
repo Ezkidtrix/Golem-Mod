@@ -12,7 +12,7 @@ import net.minecraft.util.hit.EntityHitResult;
 import net.minecraft.world.World;
 
 public class GolemStaffListener {
-    public static ActionResult executeAction(PlayerEntity player, World world, Hand hand, Entity entity, EntityHitResult entityHitResult) {
+    public static ActionResult executeLeftClickAction(PlayerEntity player, World world, Hand hand, Entity entity, EntityHitResult entityHitResult) {
         ItemStack itemStack = player.getStackInHand(hand);
 
         if (isCustomItem(itemStack)) {
