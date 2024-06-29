@@ -13,6 +13,7 @@ public class IceMiniGolemRenderer extends MobEntityRenderer<IceMiniGolemEntity, 
 
     public IceMiniGolemRenderer(EntityRendererFactory.Context context) {
         super(context, new IceMiniGolemModel<>(context.getPart(ModModelLayers.IceMiniGolem)), 0.6f);
+
     }
 
     @Override

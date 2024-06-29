@@ -37,7 +37,7 @@ public class MiniCreeperEntity extends CreeperEntity implements SkinOverlayOwner
     private int lastFuseTime;
     private int currentFuseTime;
     private int fuseTime = 30;
-    private int explosionRadius = 3;
+    private int explosionRadius = 10;
     private int headsDropped;
 
     public MiniCreeperEntity(EntityType<? extends CreeperEntity> entityType, World world) {

@@ -1,10 +1,7 @@
 package net.ezkidtrix.epicmcmod.entity;
 
 import net.ezkidtrix.epicmcmod.GolemMod;
-import net.ezkidtrix.epicmcmod.entity.custom.IceMiniGolemEntity;
-import net.ezkidtrix.epicmcmod.entity.custom.MiniCreeperEntity;
-import net.ezkidtrix.epicmcmod.entity.custom.MiniGolemEntity;
-import net.ezkidtrix.epicmcmod.entity.custom.ThrowableAnvilEntity;
+import net.ezkidtrix.epicmcmod.entity.custom.*;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricEntityTypeBuilder;
 import net.minecraft.entity.EntityDimensions;
 import net.minecraft.entity.EntityType;
