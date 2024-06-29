@@ -55,6 +55,8 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.registerArmor((ArmorItem) ModItems.GOLEM_LEGGINGS);
         itemModelGenerator.registerArmor((ArmorItem) ModItems.GOLEM_BOOTS);
 
+        itemModelGenerator.register(ModItems.GOLEM_STAFF, Models.HANDHELD);
+
         itemModelGenerator.register(ModItems.THROWABLE_ANVIL, new Model(Optional.of(Identifier.of("block/anvil")), Optional.empty()));
     }
 }

@@ -7,12 +7,14 @@ import net.ezkidtrix.epicmcmod.entity.custom.MiniCreeperEntity;
 import net.ezkidtrix.epicmcmod.entity.custom.MiniGolemEntity;
 import net.ezkidtrix.epicmcmod.item.ModItemGroups;
 import net.ezkidtrix.epicmcmod.item.ModItems;
+import net.ezkidtrix.epicmcmod.item.listener.GolemStaffListener;
 import net.ezkidtrix.epicmcmod.sounds.ModSounds;
 import net.ezkidtrix.epicmcmod.util.ModCustomTrades;
 import net.ezkidtrix.epicmcmod.villager.ModVillagers;
 import net.ezkidtrix.epicmcmod.world.gen.ModWorldGeneration;
 import net.fabricmc.api.ModInitializer;
 
+import net.fabricmc.fabric.api.event.player.AttackEntityCallback;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -38,5 +40,7 @@ public class GolemMod implements ModInitializer {
 		FabricDefaultAttributeRegistry.register(ModEntities.IceMiniGolem, IceMiniGolemEntity.createIceMiniGolemAttributes());
 
 		FabricDefaultAttributeRegistry.register(ModEntities.MiniCreeper, MiniCreeperEntity.createMiniCreeperAttributes());
+
+		AttackEntityCallback.EVENT.register(GolemStaffListener::executeAction);
 	}
 }

@@ -1,4 +1,4 @@
-// 1.21	2024-06-27T21:49:19.0011102	Golem Mod/Model Definitions
+// 1.21	2024-06-28T21:07:32.3166907	Golem Mod/Model Definitions
 534e9325a5e9e7fde3ba3d45f11972929046affc assets\golem-mod\models\item\golem_helmet_quartz_trim.json
 4ee12a441a8ce722d022d780b8fd79e12e5b029d assets\golem-mod\models\block\golem_door_top_left.json
 75e94afb21bac68e02426311f6c0d8a5848a70cd assets\golem-mod\models\item\golem_boots_emerald_trim.json
@@ -24,6 +24,7 @@ b25798fcc9d4c2f34f68627142039df024118edc assets\golem-mod\models\block\golem_fen
 6684b6538d4866d95ec7e0770053002274eeb556 assets\golem-mod\models\item\golem_leggings_iron_trim.json
 a7c380eee8d863ece8d21474e41c6cb7d94f5195 assets\golem-mod\blockstates\golem_door.json
 701f2fa5ed7782abb9e4d6339388b53f20591112 assets\golem-mod\models\item\golem_helmet_gold_trim.json
+7b2faa5e8e0da4cd823e79487b9f65fb871d04d4 assets\golem-mod\models\item\golem_staff.json
 5fa0e50199cc4e70b179a6f1797259dffdc1dddf assets\golem-mod\models\block\golem_door_top_right_open.json
 9ec27090ace862be886ff4da7364b06d220d7aca assets\golem-mod\models\block\golem_fence_gate_wall.json
 13503de889faa657de8d2a19b8ef3432c46697e1 assets\golem-mod\models\item\golem_slab.json
@@ -59,8 +60,8 @@ e3b2e18f0f7d3c2cc518dd1ca898846c0d01bab5 assets\golem-mod\models\item\golem_ches
 cf6f074ca2e5fa244e0226518c08c8e2b74230ba assets\golem-mod\models\item\golem_leggings_lapis_trim.json
 c6d17bf5483274060f0f90b7d48abd3080ec45e5 assets\golem-mod\models\item\golem_axe.json
 72c60a605cb78b2892c3cb64959e8b55eb84f56c assets\golem-mod\models\item\golem_shovel.json
-67116f231d5fa880739c037191c3cbf159c8e1e6 assets\golem-mod\blockstates\golem_block.json
 ee152a58373f37ec04e3c64cde06743b3d25c173 assets\golem-mod\blockstates\golem_trapdoor.json
+67116f231d5fa880739c037191c3cbf159c8e1e6 assets\golem-mod\blockstates\golem_block.json
 0ef8bf2f59b3badd430c9cae2c4e0ae6ad6e7baa assets\golem-mod\models\block\golem_wall_post.json
 f3108f74ee062df1956d59621445d2f93383208e assets\golem-mod\models\item\deepslate_golem_ore.json
 1e5545ea5e8ed88217388c663f67155df1acf49a assets\golem-mod\models\item\golem_boots_gold_trim.json

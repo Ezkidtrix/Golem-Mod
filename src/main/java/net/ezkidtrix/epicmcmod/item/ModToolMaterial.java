@@ -1,11 +1,9 @@
 package net.ezkidtrix.epicmcmod.item;
 
 import net.ezkidtrix.epicmcmod.GolemMod;
-import net.ezkidtrix.epicmcmod.block.ModBlocks;
 import net.minecraft.block.Block;
 import net.minecraft.item.ToolMaterial;
 import net.minecraft.recipe.Ingredient;
-import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.tag.TagKey;
 import net.minecraft.util.Identifier;

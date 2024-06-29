@@ -4,11 +4,20 @@ import net.ezkidtrix.epicmcmod.GolemMod;
 import net.ezkidtrix.epicmcmod.block.ModBlocks;
 import net.ezkidtrix.epicmcmod.entity.ModEntities;
 import net.ezkidtrix.epicmcmod.item.custom.ThrowableAnvilItem;
+import net.ezkidtrix.epicmcmod.sounds.ModSounds;
+import net.fabricmc.fabric.api.item.v1.FabricItem;
+import net.minecraft.block.jukebox.JukeboxSong;
+import net.minecraft.component.type.JukeboxPlayableComponent;
 import net.minecraft.item.*;
+import net.minecraft.predicate.item.ItemSubPredicate;
+import net.minecraft.predicate.item.JukeboxPlayablePredicate;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.registry.entry.RegistryEntry;
+import net.minecraft.sound.SoundEvent;
+import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.Rarity;
 
 public class ModItems {
     public static final Item GOLEM_INGOT = registerItem("golem_ingot", new Item(new Item.Settings()));
@@ -30,8 +39,9 @@ public class ModItems {
     public static final Item GOLEM_BOOTS = registerItem("golem_boots", new ArmorItem(new RegistryEntry.Direct<>(ModArmor.GOLEM_ARMOR), ArmorItem.Type.BOOTS, new Item.Settings()));
 
     public static final Item GOLEM_SEEDS = registerItem("golem_seeds", new AliasedBlockItem(ModBlocks.GOLEM_CROP, new Item.Settings()));
-
     public static final Item THROWABLE_ANVIL = registerItem("throwable_anvil", new ThrowableAnvilItem(new Item.Settings()));
+
+    public static final Item GOLEM_STAFF = registerItem("golem_staff", new Item(new Item.Settings().maxCount(1).rarity(Rarity.RARE).fireproof()));
 
     private static Item registerItem(String name, Item item) {
         return Registry.register(Registries.ITEM, Identifier.of(GolemMod.MOD_ID, name), item);

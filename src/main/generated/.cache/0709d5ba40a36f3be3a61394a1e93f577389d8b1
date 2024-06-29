@@ -1,4 +1,4 @@
-// 1.21	2024-06-27T21:49:19.0041106	Golem Mod/Recipes
+// 1.21	2024-06-28T21:07:32.3196914	Golem Mod/Recipes
 6e24161b3ad1c9830dfc6d72fd3b5ea4e512bfa7 data\golem-mod\advancement\recipes\redstone\golem_pressure_plate.json
 899abbbb72774ba3468d5a5d2773fd2f3189495d data\golem-mod\advancement\recipes\redstone\golem_button.json
 3477146d3e294318bd7c888577b7db03d56e596e data\golem-mod\advancement\recipes\building_blocks\golem_stairs.json
@@ -33,8 +33,8 @@ ebef980fe0316d44dbfa8c279abee05cd87a3668 data\golem-mod\advancement\recipes\tool
 84ac7987ba4b3038d67bec6c588160979fc027d6 data\golem-mod\advancement\recipes\combat\golem_helmet.json
 47e4d4561e154e3cefd6d95425da9df16f68002e data\golem-mod\recipe\golem_fence_gate.json
 1808dead3b6bfb8bc3de69f35942d2ba79b3ed1c data\golem-mod\recipe\golem_hoe.json
-bdedfea3fc0fe5ec29ccdf470058b6a0145f85d8 data\golem-mod\recipe\golem_sword.json
 6c95b4acc857473791b5c3276c33f145996eaacb data\golem-mod\recipe\golem_shovel.json
+bdedfea3fc0fe5ec29ccdf470058b6a0145f85d8 data\golem-mod\recipe\golem_sword.json
 ea041bdccf4abcca444fe0a73165322515754605 data\golem-mod\recipe\golem_pressure_plate.json
 2f66aa714e02271823df62297800b67a4130deb3 data\golem-mod\advancement\recipes\combat\golem_leggings.json
 6147bccc91a51279be284c814b5bb7a6cadc5782 data\golem-mod\recipe\golem_chestplate.json
