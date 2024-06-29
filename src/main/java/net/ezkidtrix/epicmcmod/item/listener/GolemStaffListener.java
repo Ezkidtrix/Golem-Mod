@@ -16,7 +16,7 @@ public class GolemStaffListener {
         ItemStack itemStack = player.getStackInHand(hand);
 
         if (isCustomItem(itemStack)) {
-            entity.addVelocity(0, 0.55, 0);
+            entity.addVelocity(0, 0.56, 0);
             return ActionResult.SUCCESS;
         }
 
