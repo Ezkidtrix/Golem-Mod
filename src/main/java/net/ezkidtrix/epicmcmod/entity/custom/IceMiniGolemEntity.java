@@ -1,7 +1,9 @@
 package net.ezkidtrix.epicmcmod.entity.custom;
 
 import net.minecraft.block.BlockState;
+import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentHelper;
+import net.minecraft.enchantment.EnchantmentLevelEntry;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityStatuses;
 import net.minecraft.entity.EntityType;
@@ -17,9 +19,17 @@ import net.minecraft.entity.mob.*;
 import net.minecraft.entity.passive.IronGolemEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.fluid.Fluids;
+import net.minecraft.item.EnchantedBookItem;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NbtCompound;
+import net.minecraft.registry.DynamicRegistryManager;
+import net.minecraft.registry.RegistryKeys;
+import net.minecraft.registry.entry.RegistryEntry;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundEvents;
+import net.minecraft.text.Text;
+import net.minecraft.util.Identifier;
 import net.minecraft.util.TimeHelper;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.intprovider.UniformIntProvider;
@@ -231,6 +241,17 @@ public class IceMiniGolemEntity extends IronGolemEntity implements Angerable  {
     @Override
     public void onDeath(DamageSource damageSource) {
         super.onDeath(damageSource);
+        Entity attacker = damageSource.getAttacker();
+
+        if (attacker != null) {
+            if (Math.random() < 0.03) {
+                attacker.sendMessage(Text.literal("spherer"));
+                super.dropStack(getEnchantedBook("golem-mod:spherer_enchantment", 5, attacker));
+            } else if (Math.random() < 0.012) {
+                attacker.sendMessage(Text.literal("clearer"));
+                super.dropStack(getEnchantedBook("golem-mod:clearer_enchantment", 1, attacker));
+            }
+        }
     }
 
     @Override
@@ -248,5 +269,13 @@ public class IceMiniGolemEntity extends IronGolemEntity implements Angerable  {
             return SpawnHelper.isClearForSpawn(world, blockPos, world.getBlockState(blockPos), Fluids.EMPTY.getDefaultState(), EntityType.IRON_GOLEM) && world.doesNotIntersectEntities(this);
         }
         return false;
+    }
+
+    private static ItemStack getEnchantedBook(String name, int maxLevel, Entity entity) {
+        return EnchantedBookItem.forEnchantment(new EnchantmentLevelEntry(getEnchantment(name, entity), (int) (Math.random() * maxLevel + 1)));
+    }
+
+    private static RegistryEntry<Enchantment> getEnchantment(String name, Entity attacker) {
+        return attacker.getWorld().getRegistryManager().get(RegistryKeys.ENCHANTMENT).getEntry(Identifier.of(name)).get();
     }
 }

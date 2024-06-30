@@ -1,6 +1,7 @@
 package net.ezkidtrix.epicmcmod;
 
 import net.ezkidtrix.epicmcmod.block.ModBlocks;
+import net.ezkidtrix.epicmcmod.enchantment.EnchantmentListener;
 import net.ezkidtrix.epicmcmod.entity.ModEntities;
 import net.ezkidtrix.epicmcmod.entity.custom.IceMiniGolemEntity;
 import net.ezkidtrix.epicmcmod.entity.custom.MiniCreeperEntity;
@@ -42,5 +43,6 @@ public class GolemMod implements ModInitializer {
 		FabricDefaultAttributeRegistry.register(ModEntities.MiniCreeper, MiniCreeperEntity.createMiniCreeperAttributes());
 
 		AttackEntityCallback.EVENT.register(GolemStaffListener::executeLeftClickAction);
+		EnchantmentListener.register();
 	}
 }
