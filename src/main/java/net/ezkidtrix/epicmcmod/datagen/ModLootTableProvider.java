@@ -5,7 +5,6 @@ import net.ezkidtrix.epicmcmod.block.custom.GolemCropBlock;
 import net.ezkidtrix.epicmcmod.item.ModItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootTableProvider;
-import net.minecraft.block.BlockState;
 import net.minecraft.loot.condition.BlockStatePropertyLootCondition;
 import net.minecraft.predicate.StatePredicate;
 import net.minecraft.registry.RegistryWrapper;

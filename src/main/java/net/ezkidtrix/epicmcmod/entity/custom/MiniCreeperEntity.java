@@ -1,5 +1,6 @@
 package net.ezkidtrix.epicmcmod.entity.custom;
 
+import net.ezkidtrix.epicmcmod.item.ModItems;
 import net.minecraft.entity.*;
 import net.minecraft.entity.attribute.DefaultAttributeContainer;
 import net.minecraft.entity.attribute.EntityAttributes;
@@ -226,6 +227,15 @@ public class MiniCreeperEntity extends CreeperEntity implements SkinOverlayOwner
 
     public void onHeadDropped() {
         ++this.headsDropped;
+    }
+
+    @Override
+    public void onDeath(DamageSource damageSource) {
+        super.onDeath(damageSource);
+
+        if (Math.random() < 0.03) {
+            super.dropItem(ModItems.GOLEM_MUSIC);
+        }
     }
 
     static {

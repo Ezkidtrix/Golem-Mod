@@ -5,7 +5,6 @@ import net.ezkidtrix.epicmcmod.block.custom.GolemCropBlock;
 import net.ezkidtrix.epicmcmod.item.ModItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
-import net.minecraft.block.Blocks;
 import net.minecraft.data.client.*;
 import net.minecraft.item.ArmorItem;
 import net.minecraft.util.Identifier;
@@ -58,5 +57,7 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.GOLEM_STAFF, Models.HANDHELD);
 
         itemModelGenerator.register(ModItems.THROWABLE_ANVIL, new Model(Optional.of(Identifier.of("block/anvil")), Optional.empty()));
+
+        itemModelGenerator.register(ModItems.GOLEM_MUSIC, Models.GENERATED);
     }
 }

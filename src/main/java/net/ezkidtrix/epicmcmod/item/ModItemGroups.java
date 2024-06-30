@@ -49,8 +49,9 @@ public class ModItemGroups {
                         entries.add(ModItems.MINI_CREEPER_SPAWN_EGG);
 
                         entries.add(ModItems.THROWABLE_ANVIL);
-
                         entries.add(ModItems.GOLEM_STAFF);
+
+                        entries.add(ModItems.GOLEM_MUSIC);
                     }).build());
 
     public static void registerItemGroups() {

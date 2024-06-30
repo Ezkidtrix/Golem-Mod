@@ -1,0 +1,10 @@
+{
+  "golem_music": {
+    "sounds": [
+      {
+        "name": "golem-mod:golem_music",
+        "stream": true
+      }
+    ]
+  }
+}

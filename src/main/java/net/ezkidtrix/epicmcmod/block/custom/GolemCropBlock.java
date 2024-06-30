@@ -8,8 +8,6 @@ import net.minecraft.item.ItemConvertible;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.IntProperty;
 
-import java.util.Locale;
-
 public class GolemCropBlock extends CropBlock {
     public static final int MAX_AGE = 2;
     public static final IntProperty AGE = IntProperty.of("age", 0, 2);

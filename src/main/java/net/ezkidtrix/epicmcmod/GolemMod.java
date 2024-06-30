@@ -8,7 +8,7 @@ import net.ezkidtrix.epicmcmod.entity.custom.MiniGolemEntity;
 import net.ezkidtrix.epicmcmod.item.ModItemGroups;
 import net.ezkidtrix.epicmcmod.item.ModItems;
 import net.ezkidtrix.epicmcmod.item.listener.GolemStaffListener;
-import net.ezkidtrix.epicmcmod.sounds.ModSounds;
+import net.ezkidtrix.epicmcmod.sound.ModSounds;
 import net.ezkidtrix.epicmcmod.util.ModCustomTrades;
 import net.ezkidtrix.epicmcmod.villager.ModVillagers;
 import net.ezkidtrix.epicmcmod.world.gen.ModWorldGeneration;
@@ -32,9 +32,9 @@ public class GolemMod implements ModInitializer {
 		ModBlocks.registerModBlocks();
 
 		ModCustomTrades.registerCustomTrades();
-		ModSounds.registerSounds();
-
 		ModVillagers.registerVillagers();
+
+		ModSounds.registerModSounds();
 
 		FabricDefaultAttributeRegistry.register(ModEntities.MiniGolem, MiniGolemEntity.createMiniGolemAttributes());
 		FabricDefaultAttributeRegistry.register(ModEntities.IceMiniGolem, IceMiniGolemEntity.createIceMiniGolemAttributes());

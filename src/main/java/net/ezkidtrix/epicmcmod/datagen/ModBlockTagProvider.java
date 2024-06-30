@@ -1,14 +1,11 @@
 package net.ezkidtrix.epicmcmod.datagen;
 
 import net.ezkidtrix.epicmcmod.block.ModBlocks;
-import net.ezkidtrix.epicmcmod.item.ModItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
-import net.minecraft.block.Block;
 import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.registry.tag.BlockTags;
 
-import java.lang.reflect.Modifier;
 import java.util.concurrent.CompletableFuture;
 
 public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {

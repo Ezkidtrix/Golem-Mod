@@ -1,4 +1,4 @@
-// 1.21	2024-06-28T21:07:32.3166907	Golem Mod/Model Definitions
+// 1.21	2024-06-30T08:18:26.0071862	Golem Mod/Model Definitions
 534e9325a5e9e7fde3ba3d45f11972929046affc assets\golem-mod\models\item\golem_helmet_quartz_trim.json
 4ee12a441a8ce722d022d780b8fd79e12e5b029d assets\golem-mod\models\block\golem_door_top_left.json
 75e94afb21bac68e02426311f6c0d8a5848a70cd assets\golem-mod\models\item\golem_boots_emerald_trim.json
@@ -60,8 +60,8 @@ e3b2e18f0f7d3c2cc518dd1ca898846c0d01bab5 assets\golem-mod\models\item\golem_ches
 cf6f074ca2e5fa244e0226518c08c8e2b74230ba assets\golem-mod\models\item\golem_leggings_lapis_trim.json
 c6d17bf5483274060f0f90b7d48abd3080ec45e5 assets\golem-mod\models\item\golem_axe.json
 72c60a605cb78b2892c3cb64959e8b55eb84f56c assets\golem-mod\models\item\golem_shovel.json
-ee152a58373f37ec04e3c64cde06743b3d25c173 assets\golem-mod\blockstates\golem_trapdoor.json
 67116f231d5fa880739c037191c3cbf159c8e1e6 assets\golem-mod\blockstates\golem_block.json
+ee152a58373f37ec04e3c64cde06743b3d25c173 assets\golem-mod\blockstates\golem_trapdoor.json
 0ef8bf2f59b3badd430c9cae2c4e0ae6ad6e7baa assets\golem-mod\models\block\golem_wall_post.json
 f3108f74ee062df1956d59621445d2f93383208e assets\golem-mod\models\item\deepslate_golem_ore.json
 1e5545ea5e8ed88217388c663f67155df1acf49a assets\golem-mod\models\item\golem_boots_gold_trim.json
@@ -97,24 +97,25 @@ e8b658692cacb14580740684f3cf5ea86ec1de60 assets\golem-mod\blockstates\golem_fenc
 c37f11124c4e9471fdd5259061510bdab459829c assets\golem-mod\models\item\golem_boots_amethyst_trim.json
 669093cce3827c1d14174b334e1a03083b915bf4 assets\golem-mod\models\block\golem_fence_gate_open.json
 08a43fd5169d8d3fb7d72dd344bff913c12421de assets\golem-mod\models\item\golem_boots_copper_trim.json
-7383b23ef9db8098c8b70da3cad895c6d624222c assets\golem-mod\models\block\golem_fence_gate.json
 8332309540987b1f519086d26159d06ff1f8b531 assets\golem-mod\models\item\golem_boots_lapis_trim.json
+7383b23ef9db8098c8b70da3cad895c6d624222c assets\golem-mod\models\block\golem_fence_gate.json
 cbb13bc8f12f4725d11fd3329094d012bf52b935 assets\golem-mod\models\item\golem_chestplate_copper_trim.json
 b70ab442c96bb26130fbbc81425e43aaa886dad9 assets\golem-mod\models\item\golem_boots_diamond_trim.json
 1c140ba6134be6b7b402249a5458e62c9865df19 assets\golem-mod\models\item\golem_helmet_amethyst_trim.json
 e8d00c6b9e8036a2f44fa3335fe279de208aa4d0 assets\golem-mod\models\item\golem_trapdoor.json
 d6689360837f5649ad4955547907f34527100162 assets\golem-mod\blockstates\golem_wall.json
-63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets\golem-mod\models\item\mini_creeper_spawn_egg.json
 eb5c3d43750889ae1963cb3ca449d9a29d1d84ca assets\golem-mod\models\block\golem_wall_side_tall.json
+63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets\golem-mod\models\item\mini_creeper_spawn_egg.json
 dbfc3326259180e8b3d4b62f58c219816bc317eb assets\golem-mod\models\item\golem_chestplate_iron_trim.json
 6f529900d9680f01000d253fe4f455e83e762d00 assets\golem-mod\models\item\golem_leggings_gold_trim.json
 95a5aad614798d0afc00102ad790147a729ac3bb assets\golem-mod\models\block\golem_wall_inventory.json
+9307616295baa9f9cc2369acb0044614ce44ebc5 assets\golem-mod\models\item\golem_music.json
 6fac9a8ce86a1f56e0fb831533e3109213b5f32b assets\golem-mod\models\item\golem_leggings_emerald_trim.json
 5f7a11571304374fd97b4d13e52bc6257537d1a4 assets\golem-mod\models\item\golem_chestplate.json
 a70fb46f06ff858b94893ec7370fb142710a58c9 assets\golem-mod\models\block\golem_button.json
 2926e9271bc22905ae24ea394817524dbef5db32 assets\golem-mod\models\block\golem_stairs_outer.json
 77e5d9e21b4bf10a74b570574b40446923b3dc07 assets\golem-mod\models\block\golem_slab.json
+faa949abb26d046c8404331a7a1177bbd0a14d89 assets\golem-mod\models\item\golem_fence_gate.json
 249f39c5ee9fa6f9a73c6a8ae91cb0818c4b0654 assets\golem-mod\models\item\golem_hoe.json
 ebd2a5645074f125fd12604edabdbde25c9b13c6 assets\golem-mod\models\item\golem_ingot.json
-faa949abb26d046c8404331a7a1177bbd0a14d89 assets\golem-mod\models\item\golem_fence_gate.json
 52ec18c5a9d94f5e8afdaac855342af8d3c88eff assets\golem-mod\models\item\golem_leggings_diamond_trim.json
