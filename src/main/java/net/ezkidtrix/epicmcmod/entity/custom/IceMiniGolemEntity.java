@@ -245,10 +245,8 @@ public class IceMiniGolemEntity extends IronGolemEntity implements Angerable  {
 
         if (attacker != null) {
             if (Math.random() < 0.03) {
-                attacker.sendMessage(Text.literal("spherer"));
                 super.dropStack(getEnchantedBook("golem-mod:spherer_enchantment", 5, attacker));
             } else if (Math.random() < 0.012) {
-                attacker.sendMessage(Text.literal("clearer"));
                 super.dropStack(getEnchantedBook("golem-mod:clearer_enchantment", 1, attacker));
             }
         }
