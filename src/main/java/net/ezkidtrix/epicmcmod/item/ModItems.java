@@ -6,12 +6,15 @@ import net.ezkidtrix.epicmcmod.entity.ModEntities;
 import net.ezkidtrix.epicmcmod.item.custom.ThrowableAnvilItem;
 import net.ezkidtrix.epicmcmod.item.tool.*;
 import net.ezkidtrix.epicmcmod.registry.ModdedJukeboxSongs;
+import net.fabricmc.fabric.api.item.v1.FabricItem;
 import net.minecraft.item.*;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.registry.entry.RegistryEntry;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.Rarity;
+
+import javax.naming.directory.ModificationItem;
 
 public class ModItems {
     public static final Item GOLEM_INGOT = registerItem("golem_ingot", new Item(new Item.Settings()));
