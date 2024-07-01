@@ -1,6 +1,7 @@
-package net.ezkidtrix.epicmcmod.item;
+package net.ezkidtrix.epicmcmod.item.tool;
 
 import net.ezkidtrix.epicmcmod.GolemMod;
+import net.ezkidtrix.epicmcmod.item.ModItems;
 import net.minecraft.block.Block;
 import net.minecraft.item.ToolMaterial;
 import net.minecraft.recipe.Ingredient;
@@ -10,8 +11,8 @@ import net.minecraft.util.Identifier;
 
 import java.util.function.Supplier;
 
-public enum ModToolMaterial implements ToolMaterial {
-    GOLEM(10000, 100f, 3f, 50, () -> Ingredient.ofItems(ModItems.GOLEM_INGOT));
+public enum GolemShovelMaterial implements ToolMaterial {
+    GOLEM_SHOVEL(200000, 100f, 6f, 50, () -> Ingredient.ofItems(ModItems.GOLEM_INGOT));
 
     private final int itemDurability;
     private final float miningSpeed;
@@ -19,7 +20,7 @@ public enum ModToolMaterial implements ToolMaterial {
     private final int enchantAbility;
     private final Supplier<Ingredient> repairIngredient;
 
-    ModToolMaterial(int itemDurability, float miningSpeed, float attackDamage, int enchantability, Supplier<Ingredient> repairIngredient) {
+    GolemShovelMaterial(int itemDurability, float miningSpeed, float attackDamage, int enchantability, Supplier<Ingredient> repairIngredient) {
         this.itemDurability = itemDurability;
         this.miningSpeed = miningSpeed;
         this.attackDamage = attackDamage;
