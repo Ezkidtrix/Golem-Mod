@@ -3,6 +3,7 @@ package net.ezkidtrix.epicmcmod.item.tool;
 import net.ezkidtrix.epicmcmod.GolemMod;
 import net.ezkidtrix.epicmcmod.item.ModItems;
 import net.minecraft.block.Block;
+import net.minecraft.item.AxeItem;
 import net.minecraft.item.ToolMaterial;
 import net.minecraft.recipe.Ingredient;
 import net.minecraft.registry.RegistryKeys;
