@@ -1,17 +1,17 @@
 package net.ezkidtrix.epicmcmod.enchantment;
 
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
-import net.fabricmc.fabric.api.event.player.AttackEntityCallback;
 import net.fabricmc.fabric.api.event.player.PlayerBlockBreakEvents;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.component.type.ItemEnchantmentsComponent;
 import net.minecraft.entity.EquipmentSlot;
+import net.minecraft.entity.effect.StatusEffectInstance;
+import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.server.MinecraftServer;
-import net.minecraft.util.ActionResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
@@ -51,12 +51,13 @@ public class EnchantmentListener {
             @Override
             public void onStartTick(MinecraftServer server) {
                 server.getPlayerManager().getPlayerList().forEach(EnchantmentListener::checkFlying);
+                server.getPlayerManager().getPlayerList().forEach(EnchantmentListener::checkHoldingMace);
             }
         });
     }
 
     public static void checkFlying(PlayerEntity player) {
-        if (hasCustomEnchantment(player.getEquippedStack(EquipmentSlot.CHEST), "golem-mod:clearer_enchantment") && player.isFallFlying() && player.getEquippedStack(EquipmentSlot.CHEST).getItem() == Items.ELYTRA) {
+        if (hasCustomEnchantment(player.getEquippedStack(EquipmentSlot.CHEST), "golem-mod:clearer_enchantment") && player.isFallFlying() && player.getEquippedStack(EquipmentSlot.CHEST).getItem() == Items.ELYTRA && player.getMainHandStack().getItem() == Items.FIREWORK_ROCKET) {
             int radius = 8;
 
             BlockPos pos = player.getBlockPos();
@@ -76,6 +77,12 @@ public class EnchantmentListener {
                     }
                 }
             }
+        }
+    }
+
+    public static void checkHoldingMace(PlayerEntity player) {
+        if (hasCustomEnchantment(player.getEquippedStack(EquipmentSlot.MAINHAND), "golem-mod:speedy_enchantment")) {
+            player.addStatusEffect(new StatusEffectInstance(StatusEffects.SPEED, 1, getLevel(player.getMainHandStack(), "golem-mod:speedy_enchantment") * 2, true, false, false));
         }
     }
 

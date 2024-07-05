@@ -1,9 +1,8 @@
-package net.ezkidtrix.epicmcmod.item.tool;
+package net.ezkidtrix.epicmcmod.item.material;
 
 import net.ezkidtrix.epicmcmod.GolemMod;
 import net.ezkidtrix.epicmcmod.item.ModItems;
 import net.minecraft.block.Block;
-import net.minecraft.item.AxeItem;
 import net.minecraft.item.ToolMaterial;
 import net.minecraft.recipe.Ingredient;
 import net.minecraft.registry.RegistryKeys;
@@ -12,8 +11,8 @@ import net.minecraft.util.Identifier;
 
 import java.util.function.Supplier;
 
-public enum GolemAxeMaterial implements ToolMaterial {
-    GOLEM_AXE(200000, 100f, 24f, 50, () -> Ingredient.ofItems(ModItems.GOLEM_INGOT));
+public enum GolemHoeMaterial implements ToolMaterial {
+    GOLEM_HOE(200000, 100f, 2f, 50, () -> Ingredient.ofItems(ModItems.GOLEM_INGOT));
 
     private final int itemDurability;
     private final float miningSpeed;
@@ -21,7 +20,7 @@ public enum GolemAxeMaterial implements ToolMaterial {
     private final int enchantAbility;
     private final Supplier<Ingredient> repairIngredient;
 
-    GolemAxeMaterial(int itemDurability, float miningSpeed, float attackDamage, int enchantability, Supplier<Ingredient> repairIngredient) {
+    GolemHoeMaterial(int itemDurability, float miningSpeed, float attackDamage, int enchantability, Supplier<Ingredient> repairIngredient) {
         this.itemDurability = itemDurability;
         this.miningSpeed = miningSpeed;
         this.attackDamage = attackDamage;

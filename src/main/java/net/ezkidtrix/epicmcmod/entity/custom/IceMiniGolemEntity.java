@@ -248,6 +248,8 @@ public class IceMiniGolemEntity extends IronGolemEntity implements Angerable  {
                 super.dropStack(getEnchantedBook("golem-mod:spherer_enchantment", 5, attacker));
             } else if (Math.random() < 0.012) {
                 super.dropStack(getEnchantedBook("golem-mod:clearer_enchantment", 1, attacker));
+            } else if (Math.random() < 0.0002) {
+                super.dropStack(getEnchantedBook("golem-mod:speedy_enchantment", 10, attacker));
             }
         }
     }

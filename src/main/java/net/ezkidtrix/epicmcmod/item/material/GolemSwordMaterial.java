@@ -1,4 +1,4 @@
-package net.ezkidtrix.epicmcmod.item.tool;
+package net.ezkidtrix.epicmcmod.item.material;
 
 import net.ezkidtrix.epicmcmod.GolemMod;
 import net.ezkidtrix.epicmcmod.item.ModItems;

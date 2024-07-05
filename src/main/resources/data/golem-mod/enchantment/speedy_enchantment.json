@@ -1,0 +1,16 @@
+{
+  "description": "Speedy",
+  "supported_items": "minecraft:mace",
+  "weight": 1,
+  "max_level": 10,
+  "min_cost": {
+    "base": 0,
+    "per_level_above_first": 0
+  },
+  "max_cost": {
+    "base": 0,
+    "per_level_above_first": 0
+  },
+  "anvil_cost": 250,
+  "slots": []
+}
